@@ -10,7 +10,10 @@
     "path": "sprites/spr_maze_top/spr_maze_top.yy",
   },
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "objMaze",
+    "path": "objects/objMaze/objMaze.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -22,8 +25,15 @@
   "physicsFriction": 0.2,
   "physicsStartAwake": true,
   "physicsKinematic": false,
-  "physicsShapePoints": [],
-  "eventList": [],
+  "physicsShapePoints": [
+    {"x":0.0,"y":0.0,},
+    {"x":3756.0,"y":0.0,},
+    {"x":3756.0,"y":2494.0,},
+    {"x":0.0,"y":2494.0,},
+  ],
+  "eventList": [
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+  ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {

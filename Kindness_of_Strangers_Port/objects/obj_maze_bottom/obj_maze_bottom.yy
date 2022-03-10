@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "objMaze",
+    "path": "objects/objMaze/objMaze.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
