@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(x>3000 and !playerDropped){
+if(x>2000 and !playerDropped){
 global.player=instance_create_depth(0,0,0,objPlayer)
 global.player.construct(x,y);
 	playerDropped=true
