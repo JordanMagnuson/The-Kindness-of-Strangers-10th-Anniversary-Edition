@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-falling=true
-alarm[1]=room_speed*5
+event_inherited();
+falling=false
+alarm[1]=(320-y)/5
 image_speed=0;
 movement=1;
 jump=8;
@@ -13,16 +14,125 @@ dead=false;
 stunned=false;
 start = noone;
 rescale=false;
+coll=false
+bbx=12/sprite_width
+bby=24/sprite_height
+
+
+
+
+function go(){
+/*
+	if(keyboard_check(global.keyUp)){
+		if(!place_meeting(x,y-1,objMaze)){
+		
+			y-= 1;}}
+		
+	if(keyboard_check(global.keyLeft)){
+		if(!place_meeting(x-1,y,objMaze)){
+			x-=1;}	}
+	if(keyboard_check(global.keyDown)){
+		if(!place_meeting(x,y+24,objMaze)){
+			y+=1;}	}
+			
+	if(keyboard_check(global.keyRight)){
+		if(!place_meeting(x+12,y,objMaze)){
+			x+=1}	}
+			*/
+	xlist=ds_list_create();
+	ylist=ds_list_create();
+	a=x;
+	b=y;
+	while(a<=x+12){
+		ds_list_add(xlist, a);
+		a++;}
+	while(b<=y+24){
+		ds_list_add(ylist, b);
+		b++;}
+	a=x;
+	b=y;
+	as=0;
+	bs=0;
+	am=0;
+	bm=0;
+	if(keyboard_check(global.keyUp)){
+		bs=-1
+		while(am<=15){
+			while(a<=x+bbx){
+				if(place_meeting(a,y-bby-am,objMaze)){
+					bs=0;
+					break;}
+				a++;}
+			am++;
+			a=x;}
+		bs=bs-am
+	}
+	
+	a=x;
+	//am=0;
+		
+	if(keyboard_check(global.keyDown)){
+		bs=0
+		while(am<=15){
+			while(a<=x+bbx){
+				if(place_meeting(a,y+1+am,objMaze)){
+					bs=0;
+					break;}
+				a++;}
+			am++;
+			a=x;}
+		bs=bs+am
+	}		
+			
+			
+			
+	if(keyboard_check(global.keyLeft)){
+		as=0
+		while( bm<=15){
+			while(b>=y-bby){
+				if(place_meeting(x-1-bm,b,objMaze)){
+					as=0;
+					break;}
+				b--;}
+			bm++;
+			b=y;}
+		as=as-bm
+	}
+			
+	
+	b=y;
+	if(keyboard_check(global.keyRight)){
+		as=0
+		while( bm<=15){
+			while(b>=y-bby){
+				if(place_meeting(x+bbx+bm,b,objMaze)){
+					as=0;
+					break;}
+				b--;}
+			bm++;
+			b=y;}
+		as=as+bm
+	}
+	
+	
+	x=x+as;
+	y=y+bs;
+			
+			
+			
+}
+
 
 function construct(_x,_y){
 	mGravity=0.4;
 	mMaxSpeedx=4;
+	mMaxSpeed=[4,8];
 	mMaxSpeedy=8;
 	mFriction = [0.5,0.5];
 	depth=-2;
 	//setHitbox(12,24,-10,-8);
-	image_xscale= 12/sprite_width;
-	image_yscale= 24/sprite_height;
+	image_xscale= 32/sprite_width;
+	image_yscale= 32/sprite_height;
 	
 	_type= "Player";
 	

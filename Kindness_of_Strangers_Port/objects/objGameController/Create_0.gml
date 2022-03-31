@@ -18,6 +18,8 @@ function loadlevel(){
 	var level_width = ds_map_find_value(level, "width")
 	var level_height = ds_map_find_value(level, "height")
 	var actors = ds_map_find_value(level, "actors")
+	var TR = ds_map_find_value(level,"triggers");
+	var H = ds_map_find_value(TR, "heart");
 	var PR = ds_map_find_value(actors, "person_right")
 	var PL = ds_map_find_value(actors, "person_left")
 	var PU = ds_map_find_value(actors, "person_up")
@@ -27,11 +29,15 @@ function loadlevel(){
 	mx=real(Mazesize[? "_x"])*SCALE
 	my=real(Mazesize[? "_y"])*SCALE
 	global.mt=instance_create_depth(mx,my,10,obj_maze_top);
-	global.mb=instance_create_depth(mx,my+global.mt.sprite_height +160,10,obj_maze_bottom);
+	global.mb=instance_create_depth(mx,my+global.mt.sprite_height,10,obj_maze_bottom);
 //	show_message(level_width)
 	room_width=real(level_width)*SCALE
 	room_height=real(level_height)*SCALE
 	o=0;
+	_x=real(H[? "_x"]) * SCALE
+	_y=real(H[? "_y"]) * SCALE
+	global.bigHeart=instance_create_depth(_x,_y,-1, objHeart);
+	//global.bigHeart=global.bigHeart.constrct(_x,_y);
 	while(o<real((PR[| 0][? "_len"]))){
 		var currR= PR[| o]
 		_x=real(currR[? "_x"]) * SCALE -10

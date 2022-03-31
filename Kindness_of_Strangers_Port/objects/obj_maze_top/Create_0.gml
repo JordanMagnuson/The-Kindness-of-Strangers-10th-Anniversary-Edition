@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-/*
+
 function collS(oS,_mode, _freeze){
 	if(_freeze){
 	var ss=0;
@@ -35,7 +35,7 @@ function collS(oS,_mode, _freeze){
 			counter++;}}
 }
 }
-*/
+
 
 
 function coll(_x, _y, _mode){
@@ -44,13 +44,20 @@ function coll(_x, _y, _mode){
 	Py1=objPlayer.y;
 	Py2=Py1-objPlayer.sprite_height
 	Px2=Px1+objPlayer.sprite_width
-	
+	c=14;
+	d=24;
 	a=Px1;
 	b=Py1;
 	if(_mode==0){
-	while(a<Px2){
-		while(b<Py2){
+	while(a<Px1 + 14  ){
+		while(b<Py1 + 24){
 			if(draw_getpixel(a,b)=c_black){
+				if(a==Px1){objPlayer.l=-1;}
+				else if(a>=Px1+13) {objPlayer.r=-1}
+				if(b==Py1){objPlayer.u=-1}
+				else if(b>=Py1+23){objPlayer.d=-1;}
+				
+				
 				return true;}
 			else{
 				b++;}
