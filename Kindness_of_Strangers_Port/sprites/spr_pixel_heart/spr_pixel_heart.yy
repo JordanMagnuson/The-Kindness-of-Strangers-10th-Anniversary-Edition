@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_pixel_heart","path":"sprites/spr_pixel_heart/spr_pixel_heart.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_pixel_heart",
     "tags": [],
     "resourceType": "GMSequence",
