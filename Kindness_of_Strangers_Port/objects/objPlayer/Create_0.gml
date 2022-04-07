@@ -118,8 +118,8 @@ function go(){
 	x=x+as;
 	y=y+bs;
 			
-			
-			
+	if(keyboard_check(ord("F"))){
+		x+=1;}
 }
 
 

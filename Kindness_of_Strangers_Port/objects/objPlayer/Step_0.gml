@@ -75,6 +75,7 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 	
 	//motion();
 	go();
+	grav();
 }
 
 

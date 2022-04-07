@@ -17,13 +17,32 @@ typing=solidd
 }
 function grav(){
 	
+	if(y<obj_maze_bottom.y){
 	a=0
 	b=0
 	while(a<=mGravity){
-		if(place_meeting(x,y+1+a,objMaze)){
+		if(place_meeting(x,y+1+a,obj_maze_top)){
+				break;}	
+		a++;}
+	y+=a;}
+	
+	else
+	{
+	
+	a=0
+	b=0
+	while(a<=mGravity){
+		if(place_meeting(x,y+1+a,obj_maze_bottom)){
 				break;}	
 		a++;}
 	y+=a;
+	
+	
+	
+	
+	
+	}
+	
 	//show_message(string(mGravity))
 }
 function motion(mx=true, my=true){

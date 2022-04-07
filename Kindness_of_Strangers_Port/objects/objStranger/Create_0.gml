@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
  movement=1
  jump =8
  d = 0
@@ -24,7 +25,7 @@ function construct(_x,_y){
 	mGravity=0.4;
 	mMaxspeed=[4,4];
 	mFriction=[0.5,0.5];
-	type="Stranger";
+	_type="Stranger";
 	r=random(1);
 	if(r<=0.5){
 	direction=180;}
