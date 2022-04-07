@@ -20,6 +20,10 @@ function loadlevel(){
 	var actors = ds_map_find_value(level, "actors")
 	var TR = ds_map_find_value(level,"triggers");
 	var H = ds_map_find_value(TR, "heart");
+	var T1 = ds_map_find_value(TR, "trigger_01");
+	var T2 = ds_map_find_value(TR, "trigger_02");
+	var T3 = ds_map_find_value(TR, "trigger_03");
+	var T4 = ds_map_find_value(TR, "trigger_04");
 	var PR = ds_map_find_value(actors, "person_right")
 	var PL = ds_map_find_value(actors, "person_left")
 	var PU = ds_map_find_value(actors, "person_up")
@@ -38,6 +42,27 @@ function loadlevel(){
 	_y=real(H[? "_y"]) * SCALE
 	global.bigHeart=instance_create_depth(_x,_y,-1, objHeart);
 	//global.bigHeart=global.bigHeart.constrct(_x,_y);
+	
+	_x=real(T1[? "_x"]) * SCALE
+	_y=real(T1[? "_y"]) * SCALE
+	global.trigger01=instance_create_depth(_x,_y,-1,objTrigger);
+	global.trigger01.construct(_x,_y,1);
+
+	_x=real(T2[? "_x"]) * SCALE
+	_y=real(T2[? "_y"]) * SCALE
+	global.trigger02=instance_create_depth(_x,_y,-1,objTrigger);
+	global.trigger02.construct(_x,_y,2);
+	
+	_x=real(T3[? "_x"]) * SCALE
+	_y=real(T3[? "_y"]) * SCALE
+	global.trigger03=instance_create_depth(_x,_y,-1,objTrigger);
+	global.trigger03.construct(_x,_y,3);
+	
+	_x=real(T4[? "_x"]) * SCALE
+	_y=real(T4[? "_y"]) * SCALE
+	global.trigger04=instance_create_depth(_x,_y,-1,objTrigger);
+	global.trigger04.construct(_x,_y,4);
+	
 	while(o<real((PR[| 0][? "_len"]))){
 		var currR= PR[| o]
 		_x=real(currR[? "_x"]) * SCALE -10
@@ -86,7 +111,8 @@ function loadlevel(){
 loadlevel()
 global.airplane = instance_create_depth(0,0,0,objPlane)
 global.airplane.construct(0,0)
-
+global.airplane2= instance_create_depth(0,0,0,objPlane2)
+global.airplane2.construct(room_width+100, room_height-150);
 //room_height=global.mt.sprite_height+global.mb.sprite_height+320
 //room_width=global.mt.sprite_width;
 global.PC=instance_create_depth(0,0,0,obj_PhotoController);
