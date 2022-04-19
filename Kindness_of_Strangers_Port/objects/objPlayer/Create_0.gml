@@ -18,7 +18,7 @@ coll=false
 bbx=12/sprite_width
 bby=24/sprite_height
 
-
+alarm[0]=500;
 
 
 function go(){

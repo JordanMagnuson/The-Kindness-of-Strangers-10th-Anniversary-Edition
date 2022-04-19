@@ -30,13 +30,40 @@ if(x<0 || x>room_width){
 onground=false;
 //
 
+var lx=0
 
+while(lx < sprite_width){
+	if(place_meeting(x+lx,y+1,objMaze)){
+		onground=true;
+		doublejump=true;
+		walljumping=0;
+		
+		break;}
+	lx++;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+//_speed[0]=0;
+//_speed[1]=0;
 acceleration[0]=0;
-
+accelx=false;
+accely=false;
 if(!stunned){
-	if (keyboard_check_pressed(global.keyLeft) and hspeed > -mMaxSpeed[0]) { acceleration[0] = -movement;  direction = 180; }
-	if (keyboard_check_pressed(global.keyRight) and hspeed < mMaxSpeed[0]) { acceleration[0] = movement;  direction = 0; }
-	
+	if (keyboard_check(global.keyLeft) and _speed[0] > -mMaxSpeed[0]) { acceleration[0] = -movement; accelx=true; direction = 180; }
+	else if (keyboard_check(global.keyRight) and _speed[0] < mMaxSpeed[0]) { acceleration[0] = movement; accelx=true; direction = 0; }
+	else{
+		_speed[0]=0;}
 }
 
 
@@ -44,38 +71,41 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 
 	var jumped = false;
 	if(onground){
-		vspeed=-jump;
+		_speed[1]=-jump;
 		jumped=true;}
-	
+	/*
 	if(objMaze.coll(x-1,y,1,1) and jumped and walljumping!=3){
-		vspeed=-jump;
-		hspeed=mMaxSpeed[0]*2;
+		_speed[1]=-jump;
+		_speed[0]=mMaxSpeed[0]*2;
 		walljumping=2;
 		jumped=true;}
 	if(objMaze.coll(x+1,y,1,1) and !jumped and walljumping!=3){
-		vspeed=-jump;
-		hspeed=mMaxSpeed[0];
+		_speed[1]=-jump;
+		_speed[0]=mMaxSpeed[0];
 		walljumping=1;
 		jumped=true;}
-	if(onground && !jumped && doublejump){
-		vspeed=-jump;
+		*/
+	if(!onground && !jumped && doublejump){
+		_speed[1]=-jump;
 		doublejump=false;
-		walljumping=0;}
-		
+		walljumping=0
+	}
 		
 }
 	grav();
 	maxspeed(false,true);
-	if(vspeed<0 and !(keyboard_checkpressed(global.keyA))){
+	if(_speed[1]<0 and !(keyboard_check_pressed(global.keyA))){
 		grav();
 		grav();
 	
 	}
+	if(!keyboard_check_pressed(global.keyA)){
+		_speed[1]=0;
+	}
 	
-	
-	//motion();
-	go();
-	grav();
+	motion();
+	//go();
+//	grav();
 }
 
 

@@ -8,7 +8,10 @@ if(rescale=true){
 
 }
 if(coll=false){
-	objPlayer.image_blend=c_red
+	
+	
+	if(onground){objPlayer.image_blend=c_red}
+	if(!onground){objPlayer.image_blend=c_purple}
 }
 
 

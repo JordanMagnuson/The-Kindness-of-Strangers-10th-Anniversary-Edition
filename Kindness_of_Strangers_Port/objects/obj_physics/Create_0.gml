@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
  _speed=[0,0];
+ _direction=0;
  acceleration=[0,0];
  mGravity=0.2;
  solidd= "Solid"
@@ -9,6 +10,9 @@
  mMaxspeed= [3,8];
  moty=noone;
  motx=true;
+ accelx=false;
+ accely=false;
+ 
 function construct(_x,_y){
 x=_x;
 y=_y;
@@ -24,7 +28,10 @@ function grav(){
 		if(place_meeting(x,y+1+a,obj_maze_top)){
 				break;}	
 		a++;}
-	y+=a;}
+	y+=a;
+	
+	
+	}
 	
 	else
 	{
@@ -47,24 +54,34 @@ function grav(){
 }
 function motion(mx=true, my=true){
 	if(mx){
-		if(!self.motx(self,hspeed)){hspeed=0;}
+		if(!self.motx(self,_speed[0])){  _speed[0]=0;}
 		
-		hspeed += acceleration[0];}
+	//	hspeed += acceleration[0];
+		//hspeed += 1;
+	//	if(accelx=true){show_message("human " + string(_speed[0]));}
+		_speed[0]+=acceleration[0];
+		x+=_speed[0];
+		}
 	if(my){
-		if(!self.moty(self,vspeed)){vspeed=0;}
-		vspeed+=acceleration[1];	
+		if(!self.moty(self,_speed[1])){_speed[1]=0;}
+		//vspeed+=acceleration[1]
+	//	vspeed+=1
+		_speed[1]+=acceleration[1]
+		y+=_speed[1];
+		
+		
 	}
-	if(hspeed!=0){show_message("thisx"+string(acceleration[0])+"F"+string(hspeed)+"thisy"+string(acceleration[1]));}
+	//if(hspeed!=0){show_message("thisx"+string(acceleration[0])+"F"+string(hspeed)+"thisy"+string(acceleration[1]));}
 }
 
 function friction(_x=true, _y=true){
 	if(x){
-		if(hspeed > 0){
-			hspeed-=mFriction[0];
-			if(hspeed<0){hspeed=0;} }
-		if(hspeed < 0){
-			hspeed+=mFriction[0];
-			if(hspeed>0){hspeed=0;}}
+		if(_speed[0] > 0){
+			_speed[0]-=mFriction[0];
+			if(_speed[0]<0){_speed[0]=0;} }
+		if(_speed[0] < 0){
+			_speed[0]+=mFriction[0];
+			if(_speed[0]>0){_speed[0]=0;}}
 		
 		
 	}
@@ -72,7 +89,7 @@ function friction(_x=true, _y=true){
 
 function maxspeed(_x=true, _y=true){
 	if ( _x ) {
-				if ( (hspeed) > mMaxspeed[0] )
+				if ( (_speed[0]) > mMaxspeed[0] )
 				{
 					var _xsign=1;
 					if( (direction>=0 and direction <=90) or (direction>=270 and direction<=360) ){
@@ -81,12 +98,13 @@ function maxspeed(_x=true, _y=true){
 					else{
 						_xsign=-1;
 					}
-					hspeed = mMaxspeed[0] * _xsign
+					_speed[0] = mMaxspeed[0] * _xsign
+				
 				}
 			}
 			
 			if ( _y ) {
-				if ( (vspeed) > mMaxspeed[1] )
+				if ( (_speed[1]) > mMaxspeed[1] )
 				{
 						var _ysign=1;
 					if( (direction>=180 and direction <=270) or (direction>=270 and direction<=360) ){
@@ -97,7 +115,7 @@ function maxspeed(_x=true, _y=true){
 					}
 					
 				
-					vspeed = mMaxspeed[1] * _ysign;
+					_speed[1] = mMaxspeed[1] * _ysign;
 
 					
 				}
