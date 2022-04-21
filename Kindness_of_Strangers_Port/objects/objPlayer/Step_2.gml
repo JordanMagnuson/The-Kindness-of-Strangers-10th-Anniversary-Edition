@@ -21,5 +21,9 @@ if(coll=false){
 	r=0;
 	l=0;
 	
-	
+
+if(keyboard_check_pressed(ord("G"))){
+	instance_create_depth((x+global.actorwidth),(y+global.actorheight),-1,Object22);
+//	instance_create_depth(x+sprite_width,y,-1,Object22);
+}
 	

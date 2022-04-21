@@ -12,7 +12,7 @@
  motx=true;
  accelx=false;
  accely=false;
- 
+ coll=false
 function construct(_x,_y){
 x=_x;
 y=_y;
@@ -52,22 +52,23 @@ function grav(){
 	
 	//show_message(string(mGravity))
 }
-function motion(mx=true, my=true){
+function motion(mx=true, my=true, spx, spy){
+	//if(keyboard_check_pressed(global.keyA)){show_message("Help:" + string(spy))};
 	if(mx){
-		if(!self.motx(self,_speed[0])){  _speed[0]=0;}
+		if(!motxx(self,spx)){  acceleration[0]=0;_speed[0]=0;}
 		
 	//	hspeed += acceleration[0];
 		//hspeed += 1;
 	//	if(accelx=true){show_message("human " + string(_speed[0]));}
 		_speed[0]+=acceleration[0];
-		x+=_speed[0];
+	//	x+=_speed[0];
 		}
 	if(my){
-		if(!self.moty(self,_speed[1])){_speed[1]=0;}
+		if(!(moty(self,spy))){_speed[1]=0;}
 		//vspeed+=acceleration[1]
 	//	vspeed+=1
 		_speed[1]+=acceleration[1]
-		y+=_speed[1];
+	//	y+=_speed[1];
 		
 		
 	}
@@ -98,7 +99,7 @@ function maxspeed(_x=true, _y=true){
 					else{
 						_xsign=-1;
 					}
-					_speed[0] = mMaxspeed[0] * _xsign
+					_speed[0] += mMaxspeed[0] * _xsign
 				
 				}
 			}
@@ -115,7 +116,7 @@ function maxspeed(_x=true, _y=true){
 					}
 					
 				
-					_speed[1] = mMaxspeed[1] * _ysign;
+					_speed[1] += mMaxspeed[1] * _ysign;
 
 					
 				}
@@ -133,18 +134,18 @@ function motx(e,_spdx){
 	while(i<spdx){
 		var moved=false;
 		var below=true;
-		if(!   e.place_meeting(e.x,e.y+24,objMaze)    /* objMaze.coll(e.x,e.y+1,1)*/  )                  {
+		if(!   e.place_meeting(  e.x,e.y+1,objMaze        )    /* objMaze.coll(e.x,e.y+1,1)*/  )                  {
 			below=false;}
 		s=0;
 		while(s<=slopeHeight){
 			var f=1;
-			if(e.direction>=90 and e.direction <=270){
-			//	f=-1;
+			if(_spdx<0){
+				f=-1;
 				}
-			if(! e.place_meeting(e.x +_spdx/**f*/, e.y-s,objPlayer)      /*objMaze.coll(e.x + spdx*f ,e.y-s,1)*/    ){
+			if(! e.place_meeting(e.x + f, e.y,objPlayer)      /*objMaze.coll(e.x + spdx*f ,e.y-s,1)*/    ){
 				//if()
-				e.y-=s;
-				e.x+=_spdx//*f;
+			//	e.y-=s;
+				e.x+=f//*f;
 				moved=true;
 				break;
 			
@@ -152,17 +153,13 @@ function motx(e,_spdx){
 			s++;
 		
 		}
-		if(below and !e.place_meeting(e.x,e.y+24,objMaze)    /*objMaze.coll(e.x,e.y+1,1)*/   ){ e.y+=1; }
+		if(below and !e.place_meeting(e.x,e.y+1,objMaze)    /*objMaze.coll(e.x,e.y+1,1)*/   ){ e.y+=1; }
 		if(!moved){return false;}
 		i++;
 	}
 
 
-
-
-
-
-
+//	e.x+=f*i
 
 
 
@@ -184,10 +181,97 @@ function moty(e, _spdy){
 			//if(objMaze.coll()){}
 			e.y+=_spdy//*f
 		}
-		else{return false;}
+		else{
+		
+			return false;}
 		i++;
 	}
 
 	return true;
+
+}
+
+function motxx(e, _spdx){
+	i=0;
+	var leftx=e.x;
+	var rightx=e.x;
+	var boolrx=true;
+	var boollx=true;
+	var f=1
+		if(_spdx<0){
+		var spdx=_spdx*-1;
+		 f=-1;
+	}	
+	else {var spdx=_spdx;}
+	while(i < spdx){
+	
+		
+		if(!  e.place_meeting(rightx+f,e.y/**f*/,obj_maze_top)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
+			//if(objMaze.coll()){}
+			rightx+=f//*f
+			}		
+		else{
+			if(keyboard_check(global.keyRight)){
+			//	show_message("Presto");
+				}
+			boolrx= false;}
+		i++;
+	}
+	i=0;
+	while(i < spdx){
+	
+	
+		if(!  e.place_meeting(leftx+f,e.y/**f*/,obj_maze_top)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
+			//if(objMaze.coll()){}
+			leftx+=f//*f
+			}		
+		else{
+			if(keyboard_check(global.keyLeft)){
+//show_message("Presto")
+				;}
+			boollx = false;}
+		i++;
+	}
+	i=0;
+	var copyleft =leftx;
+	var copyright= rightx;
+	if(boollx==false and boolrx==false){
+		//show_message("gooma");	
+		
+		while(i<spdx){
+			if(!e.place_meeting(copyleft-i,e.y/**f*/,obj_maze_top)  ){
+				copyleft-=i;
+				boollx=true;
+				break;
+			}
+			i++;
+		}
+		i=0;
+		while(i<spdx){
+			if(!e.place_meeting(copyright+i,e.y/**f*/,obj_maze_top)  ){
+				copyright+=i;
+				boolrx=true;
+				break;
+			}
+			i++;
+		}
+		leftx=copyleft;
+		rightx=copyright;
+		
+		
+	}
+	
+	if(f==1){
+		if(boolrx==true){
+			e.x=rightx;}
+		return boolrx;	
+		
+	}
+	if(f==-1){
+		if(boollx==true){
+			e.x=leftx;}
+		return boollx;
+	}
+	
 
 }

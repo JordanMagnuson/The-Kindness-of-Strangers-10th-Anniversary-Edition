@@ -32,15 +32,15 @@ onground=false;
 
 var lx=0
 
-while(lx < sprite_width){
-	if(place_meeting(x+lx,y+1,objMaze)){
+
+	if(place_meeting(x,y+1,objMaze)){
 		onground=true;
 		doublejump=true;
 		walljumping=0;
 		
-		break;}
+	}
 	lx++;
-}
+
 
 
 
@@ -73,18 +73,19 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 	if(onground){
 		_speed[1]=-jump;
 		jumped=true;}
-	/*
-	if(objMaze.coll(x-1,y,1,1) and jumped and walljumping!=3){
+	
+	if(place_meeting(x-1,y,objMaze) and !jumped and walljumping!=3){
 		_speed[1]=-jump;
 		_speed[0]=mMaxSpeed[0]*2;
 		walljumping=2;
 		jumped=true;}
-	if(objMaze.coll(x+1,y,1,1) and !jumped and walljumping!=3){
+		
+	if(place_meeting(x+1,y,objMaze) and !jumped and walljumping!=3){
 		_speed[1]=-jump;
-		_speed[0]=mMaxSpeed[0];
+		_speed[0]=mMaxSpeed[0]*2;
 		walljumping=1;
 		jumped=true;}
-		*/
+		
 	if(!onground && !jumped && doublejump){
 		_speed[1]=-jump;
 		doublejump=false;
@@ -102,8 +103,15 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 	if(!keyboard_check_pressed(global.keyA)){
 		_speed[1]=0;
 	}
-	
-	motion();
+
+	if(keyboard_check_pressed(global.keyA)){
+		
+		//show_message("goo" + string(_speed[1]))
+		
+		}
+	_speed[0]+=acceleration[0];
+	goo();		
+	motion(true,true,_speed[0],_speed[1]);
 	//go();
 //	grav();
 }

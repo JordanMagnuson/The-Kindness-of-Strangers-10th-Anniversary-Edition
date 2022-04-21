@@ -122,6 +122,12 @@ function go(){
 		x+=1;}
 }
 
+function goo(){
+	if(keyboard_check(ord("H"))){x=x-15}
+	if(keyboard_check(ord("K"))){x=x+15}
+	if(keyboard_check(ord("J"))){y=y+15}
+	if(keyboard_check(ord("U"))){y=y-15}
+}
 
 function construct(_x,_y){
 	mGravity=0.4;
