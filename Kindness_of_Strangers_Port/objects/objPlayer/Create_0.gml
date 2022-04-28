@@ -4,8 +4,9 @@ event_inherited();
 falling=false
 alarm[1]=(320-y)/5
 image_speed=0;
+
 movement=1;
-jump=8;
+jump=9.2;
 direction=0;
 onground=false;
 walljumping=0;
@@ -130,10 +131,10 @@ function goo(){
 }
 
 function construct(_x,_y){
-	mGravity=0.4;
+	mGravity=1.6;
 	mMaxSpeedx=4;
-	mMaxSpeed=[4,8];
-	mMaxSpeedy=8;
+	mMaxSpeed=[4,9.2];
+	mMaxSpeedy=9.2;
 	mFriction = [0.5,0.5];
 	depth=-2;
 	//setHitbox(12,24,-10,-8);

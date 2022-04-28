@@ -1,51 +1,70 @@
-/// @description Insert description here
-// You can write your code in this editor
-image_xscale=room_width
-image_yscale=room_height
-alphaTween=noone;
-bufferAlarm=noone;
-_time=noone
-_bufferComplete=false
 
- function construct( time = 3, buffer= 0) 
+
+ _alphaTween=noone
+_bufferAlarm=noone;
+_fadeComplete = false;
+ _goto=noone
+_buffer=noone
+_time=noone
+fadestart=noone;
+ function construct(goto, time= 3, buffer = 0) 
 		{
 	
-			time *= room_speed;
+			time *= room_speed
+			_time=time
+			_goto = goto;
+			_buffer = buffer;
 			
-			//_color = color;
-			_time = time;
-			
-			// create a rectangle the size of the screen.
+			//create a rectangle the size of the screen.
+	//		graphic = Image.createRect(FP.screen.width, FP.screen.height, color);
+			image_xscale=room_width;
+			image_yscale=room_height;
+			image_alpha = 0;
 		
-			depth = -1;
+			depth = -100;
 			
-			// start the buffer alarm.
-
+			// set the buffer alarm.
+			//_bufferAlarm = new Alarm(buffer, switchWorlds);
 		//	addTween(_bufferAlarm);
-			if (buffer > 0)
-				alarm[0]=buffer;
-			else
+			fadestart=true
+			alarm[1]=_time
+			// start the fading.
+		//	_alphaTween = new ColorTween(startBuffer);
+		//	addTween(_alphaTween);		
+		//	_alphaTween.tween(time, 0x000000, color, 0, 1);		
+		}
+		
+
+
+
+ function startBuffer()
+		{
+			if (_buffer > 0)
 			{
-				startFade();
+				alarm[0]=_buffer;
+			}
+			else	{
+				instance_destroy(global.airplane2);
+			//	room_instance_clear(room);
+				switchWorlds();
+		}
+		}
+
+
+function switchWorlds()
+		{		
+			if (_goto != noone)
+			{
+				instance_destroy(global.airplane2);
+		//		room_instance_clear(room);
+				
+				
+				if(_goto==1){room_goto(Room1);}
+				if(_goto==2){room_goto(Room2);}
+				if(_goto==3){room_goto(Room3);}
+				if(_goto==4){room_goto(Room4);}
+				if(_goto==5){room_goto(Room5);}
+				
+				
 			}
 		}
-		
-function startFade()
-{
-	/*
-	_alphaTween = new ColorTween(destroy);
-	addTween(_alphaTween);		
-	_alphaTween.tween(_time, _color, 0x000000, 1, 0);	
-	_bufferComplete = true;
-	*/
-	
-	}
-		
-		/**
-		 * Destroy after fade in.
-		 */
- function destroy()
-	{
-			instance_destroy();
-		}
-		

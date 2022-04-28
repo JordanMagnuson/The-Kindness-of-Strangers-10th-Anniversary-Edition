@@ -57,18 +57,25 @@ var lx=0
 //_speed[0]=0;
 //_speed[1]=0;
 acceleration[0]=0;
-accelx=false;
+accelx=0;
 accely=false;
+movex=true;
 if(!stunned){
-	if (keyboard_check(global.keyLeft) and _speed[0] > -mMaxSpeed[0]) { acceleration[0] = -movement; accelx=true; direction = 180; }
-	else if (keyboard_check(global.keyRight) and _speed[0] < mMaxSpeed[0]) { acceleration[0] = movement; accelx=true; direction = 0; }
-	else{
-		_speed[0]=0;}
+	if (keyboard_check(global.keyLeft) and _speed[0] > -mMaxSpeed[0]) { 
+		if(_speed[0]>0){_speed[0]=0;}
+		acceleration[0] = -movement; accelx=-1; direction = 180; }
+	else if (keyboard_check(global.keyRight) and _speed[0] < mMaxSpeed[0]) { 
+		if(_speed[0]<0){_speed[0]=0;}
+		acceleration[0] = movement; accelx=1; direction = 0; }
+	else if(  !(keyboard_check(global.keyRight)) && !(keyboard_check(global.keyLeft))    )      {
+		//speed[0]=0;
+		movex=false
+		}
 }
 
 
 if(!stunned && keyboard_check_pressed(global.keyA)){
-
+	//direction=90
 	var jumped = false;
 	if(onground){
 		_speed[1]=-jump;
@@ -94,7 +101,7 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 		
 }
 	grav();
-	maxspeed(false,true);
+	maxspeed(true,true);
 	if(_speed[1]<0 and !(keyboard_check_pressed(global.keyA))){
 		grav();
 		grav();
@@ -102,6 +109,7 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 	}
 	if(!keyboard_check_pressed(global.keyA)){
 		_speed[1]=0;
+		//direction=270
 	}
 
 	if(keyboard_check_pressed(global.keyA)){
@@ -109,9 +117,13 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 		//show_message("goo" + string(_speed[1]))
 		
 		}
-	_speed[0]+=acceleration[0];
-	goo();		
-	motion(true,true,_speed[0],_speed[1]);
+//	_speed[0]+=acceleration[0];
+	goo();	
+	if(movex){
+		motion(true,true,_speed[0],_speed[1]);}
+	if(!movex){
+		motion(false,true,_speed[0],_speed[1]);
+	}
 	//go();
 //	grav();
 }

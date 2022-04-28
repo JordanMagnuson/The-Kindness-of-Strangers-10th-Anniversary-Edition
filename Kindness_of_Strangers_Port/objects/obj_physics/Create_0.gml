@@ -51,6 +51,8 @@ function grav(){
 	}
 	
 	//show_message(string(mGravity))
+	
+	_speed[1]+=mGravity
 }
 function motion(mx=true, my=true, spx, spy){
 	//if(keyboard_check_pressed(global.keyA)){show_message("Help:" + string(spy))};
@@ -61,13 +63,16 @@ function motion(mx=true, my=true, spx, spy){
 		//hspeed += 1;
 	//	if(accelx=true){show_message("human " + string(_speed[0]));}
 		_speed[0]+=acceleration[0];
+		
+		if(keyboard_check(ord("P"))){show_message(string(_speed[0]))}
 	//	x+=_speed[0];
 		}
 	if(my){
-		if(!(moty(self,spy))){_speed[1]=0;}
+		if(!(moty(self,spy))){_speed[1]=0;acceleration[1]=[0];}
 		//vspeed+=acceleration[1]
+		
 	//	vspeed+=1
-		_speed[1]+=acceleration[1]
+		//_speed[1]+=acceleration[1]
 	//	y+=_speed[1];
 		
 		
@@ -99,7 +104,7 @@ function maxspeed(_x=true, _y=true){
 					else{
 						_xsign=-1;
 					}
-					_speed[0] += mMaxspeed[0] * _xsign
+					_speed[0] = mMaxspeed[0] * _xsign
 				
 				}
 			}
@@ -116,7 +121,7 @@ function maxspeed(_x=true, _y=true){
 					}
 					
 				
-					_speed[1] += mMaxspeed[1] * _ysign;
+					_speed[1] = mMaxspeed[1] * _ysign;
 
 					
 				}
@@ -206,7 +211,7 @@ function motxx(e, _spdx){
 	while(i < spdx){
 	
 		
-		if(!  e.place_meeting(rightx+f,e.y/**f*/,obj_maze_top)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
+		if(!  e.place_meeting(rightx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
 			//if(objMaze.coll()){}
 			rightx+=f//*f
 			}		
@@ -221,7 +226,7 @@ function motxx(e, _spdx){
 	while(i < spdx){
 	
 	
-		if(!  e.place_meeting(leftx+f,e.y/**f*/,obj_maze_top)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
+		if(!  e.place_meeting(leftx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
 			//if(objMaze.coll()){}
 			leftx+=f//*f
 			}		
@@ -239,7 +244,7 @@ function motxx(e, _spdx){
 		//show_message("gooma");	
 		
 		while(i<spdx){
-			if(!e.place_meeting(copyleft-i,e.y/**f*/,obj_maze_top)  ){
+			if(!e.place_meeting(copyleft-i,e.y/**f*/,objMaze)  ){
 				copyleft-=i;
 				boollx=true;
 				break;
@@ -248,7 +253,7 @@ function motxx(e, _spdx){
 		}
 		i=0;
 		while(i<spdx){
-			if(!e.place_meeting(copyright+i,e.y/**f*/,obj_maze_top)  ){
+			if(!e.place_meeting(copyright+i,e.y/**f*/,objMaze)  ){
 				copyright+=i;
 				boolrx=true;
 				break;

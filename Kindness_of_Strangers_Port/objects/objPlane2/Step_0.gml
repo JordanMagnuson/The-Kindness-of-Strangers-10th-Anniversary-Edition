@@ -20,15 +20,24 @@ global.airplane2.y-=0.7
 
 }
 
+if(global.kindness){
+	if(x<room_width/2 && !fadeOutStarted){
+		show_message("Told you so")
+		fadeOutStarted=true
+		var Fo=instance_create_depth(0,0,-100,objFadeOut)
+		Fo.construct(2,6,0);
+		//game over
+	}
+}
+
 if(!global.kindness){
 	if(x<room_width/2 && !fadeOutStarted){
 		fadeOutStarted=true
+		var Fo=instance_create_depth(0,0,-100,objFadeOut)
+		Fo.construct(4,6,0);
 		//game over
 	}
-
-
 }
-
 
 
 
