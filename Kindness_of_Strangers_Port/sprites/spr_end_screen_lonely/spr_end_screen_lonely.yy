@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_end_screen_lonely","path":"sprites/spr_end_screen_lonely/spr_end_screen_lonely.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_end_screen_lonely",
     "tags": [],
     "resourceType": "GMSequence",

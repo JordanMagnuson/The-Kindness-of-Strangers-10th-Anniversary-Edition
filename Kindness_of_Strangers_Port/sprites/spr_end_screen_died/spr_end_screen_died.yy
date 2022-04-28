@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_end_screen_died","path":"sprites/spr_end_screen_died/spr_end_screen_died.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_end_screen_died",
     "tags": [],
     "resourceType": "GMSequence",
