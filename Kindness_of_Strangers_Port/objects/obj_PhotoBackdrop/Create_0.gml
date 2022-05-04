@@ -8,7 +8,8 @@ fin=false;
 fout=false;
 alarm[0] = DISPLAY_DURATION
 planeexists=true;
-
+image_prealpha=image_alpha
+i=2;
 function construct(source,source_index){
 	sprite_index=source;
 	image_index=source_index;

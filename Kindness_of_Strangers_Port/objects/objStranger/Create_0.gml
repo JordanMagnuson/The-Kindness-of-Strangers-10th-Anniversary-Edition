@@ -4,7 +4,10 @@ event_inherited();
  movement=1
  jump =8
  d = 0
+ destruct=true;
  onground=false;
+ helped=false;
+ ignore=false;
  start = noone;
 #macro X_DISTANCE_TO_HELP 100
 #macro Y_DISTANCE_TO_HELP 10
@@ -35,6 +38,7 @@ function construct(_x,_y){
 	var iB= instance_create_depth(0,0,0,obj_photoHelper)
 	iB.sprite_index=spr_talk_bubble
 	iB.image_blend=global.BG_COLOR;
+
 	imgBubble=iB;
 //	instance_destroy(iB);
 
@@ -64,17 +68,28 @@ function checkHelp(){
 
 
 function render(){
-if(showTalkBubble){
-
-	 oB= instance_create_depth(x,y-10,-1,obj_photoHelper);
-	 oA= instance_create_depth(x+3,y-8,-3,obj_photoHelper);
+if((showTalkBubble and helped==false) or ignore=true){
+	helped=true;
+	oB= instance_create_depth(x,y-10,-1,obj_photoHelper);
+	oA= instance_create_depth(x+3,y-8,-3,obj_photoHelper);
 	
 	oB.sprite_index=imgBubble.sprite_index
 	oA.sprite_index=imgArrow.sprite_index
-	 
+	ignore=false
+//	 oB.image_alpha=0;
+//	oA.image_alpha=0;
+	
 }
 
+else if(!showTalkBubble  and destruct=true){
+	if(helped){
+	
+		
+		instance_destroy(oB);
+		instance_destroy(oA);	
+		helped=false;}
 
+}
 
 
 }

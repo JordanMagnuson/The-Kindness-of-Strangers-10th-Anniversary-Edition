@@ -120,4 +120,7 @@ alarm[0]=room_speed*10
 alarm[1]=room_speed*8
 camera_destroy(view_camera[0]);
 view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.airplane, -1, -1, room_width, -1);
-
+var T5 = instance_create_depth(206,1076-Y_DISTANCE_TO_HELP   ,0,objTrigger2)
+var T6 = instance_create_depth(62+X_DISTANCE_TO_HELP,1148,0,objTrigger2)
+T5.construct(206,1076-Y_DISTANCE_TO_HELP,1,3 )
+T6.construct(62+X_DISTANCE_TO_HELP,1148,2,3)
