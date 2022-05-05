@@ -24,7 +24,7 @@ if(camera_get_view_x(view_camera[0])+global.player._speed[0]<0){x=camera_get_vie
 if(camera_get_view_x(view_camera[0])+global.player._speed[0]>room_width){x=camera_get_view_x(view_camera[0])}
 //	if(camera_get_view_y(view_camera[0])+global.player._speed[1]<0){y=0;}
 //if(camera_get_view_y(view_camera[0])+global.player._speed[1]>room_height){y=room_height}
-	
+	if(camera_get_view_y(view_camera[0])+global.player._speed[1]<0){y=camera_get_view_x(view_camera[0])}
 	
 if(x<0){x=0;}
 if(x+640>room_width){x=room_width-640}
