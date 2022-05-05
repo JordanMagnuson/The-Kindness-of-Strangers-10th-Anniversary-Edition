@@ -7,6 +7,6 @@ global.player.y=10
 //camera_destroy(view_camera[0]);
 //view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.airplane2, -1, -1, room_width, -1);}
 camera_set_view_target(view_camera[0],global.airplane2)
-
+global.SC.hitPlane2();
 
 }

@@ -56,6 +56,7 @@ function switchWorlds()
 			if (_goto != noone)
 			{
 				instance_destroy(global.airplane2);
+				audio_stop_sound(_11_plane_sound)
 		//		room_instance_clear(room);
 				
 				

@@ -4,7 +4,7 @@ event_inherited();
 falling=false
 alarm[1]=(320-y)/5
 image_speed=0;
-
+make_glitch=true
 movement=1;
 jump=9.2;
 direction=0;
