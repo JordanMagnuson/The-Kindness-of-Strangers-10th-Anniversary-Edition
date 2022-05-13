@@ -171,7 +171,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_photos","path":"sprites/spr_photos/spr_photos.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_photos",
     "tags": [],
     "resourceType": "GMSequence",

@@ -18,12 +18,13 @@ function start(){
 	ph.sprite_index=currentPhotoArray
 	ph.image_index=0;
 	currentPhoto.construct(ph.sprite_index,ph.image_index);
+	currentPhoto.fadeIn()
 	currentIndex++;
 	instance_destroy(ph);
 }
 
 function nextPhoto(){
-	show_message("next");
+	//show_message("next");
 	//lastPhoto=currentPhoto;
 	//currentPhoto.depth=200;
 	//currentPhoto.instance_destroy();
@@ -33,8 +34,9 @@ function nextPhoto(){
 	ph.sprite_index=currentPhotoArray
 	ph.image_index=currentIndex;
 	currentPhoto.construct(ph.sprite_index,ph.image_index);
+	currentPhoto.fadeIn()
 	ph.image_alpha=0;
-	ph.depth=200;
+//	ph.depth=200;
 
 	if(currentIndex < ph.image_number-1){
 		currentIndex++;}

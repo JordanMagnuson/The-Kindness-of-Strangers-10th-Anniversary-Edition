@@ -6,7 +6,7 @@ function construct(_x,_y,_num){
 	//setHitbox(12,24,-10,-8);
 	image_xscale= 50/sprite_width;
 	image_yscale= 50/sprite_height;
-	//image_alpha=1;
+	image_alpha=0;
 	_type= "Trigger";
 	num=_num
 	x=_x;

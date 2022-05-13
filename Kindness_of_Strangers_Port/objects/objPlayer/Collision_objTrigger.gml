@@ -4,7 +4,7 @@ with(other){
 		if(num==1){
 		global.coll01=true;
 		//show_message("coll detected")
-		if(global.kindness!=false  && global.player.make_glitch=true){
+		if(global.kindness=false  && global.player.make_glitch=true){
 			global.player.make_glitch=false
 			var T5=instance_create_depth(0,0,0,objGlitchController);
 			T5.construct(global.trigger01.x,global.trigger01.y);}

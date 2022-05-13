@@ -10,30 +10,34 @@ alarm[0] = DISPLAY_DURATION
 planeexists=true;
 image_prealpha=image_alpha
 i=2;
+oldy=global.player.y
+oldx=global.player.x
+stopy=1;
 function construct(source,source_index){
 	sprite_index=source;
 	image_index=source_index;
 	depth=100;
 	image_speed=0;
-//	image_alpha=0;
+	image_alpha=0;
+	image_prealpha=image_alpha
 	image_xscale=640/sprite_width 
 	image_yscale=480/sprite_height 
 }
 
 
 function fadeIn(){
-show_message("FADE IN");
+//show_message("FADE IN");
 fin=true;
 alarm[1]=FADE_IN_DURATION
 
 }
-fadeIn();
+//fadeIn();
 
 function fadeOut(){
-show_message("FADE OUT");
-instance_destroy();
-depth=200
-fout=false;
+//show_message("FADE OUT");
+//instance_destroy();
+//depth=200
+fout=true
 alarm[2]=FADE_OUT_DURATION
 
 

@@ -1,3 +1,3 @@
-show_message("help")
+//show_message("help")
 
 showHelp()

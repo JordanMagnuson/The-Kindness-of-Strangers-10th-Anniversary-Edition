@@ -127,7 +127,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_stranger","path":"sprites/spr_stranger/spr_stranger.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spr_stranger",
     "tags": [],
     "resourceType": "GMSequence",

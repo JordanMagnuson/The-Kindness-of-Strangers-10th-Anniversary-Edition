@@ -4,10 +4,10 @@
 		
 currentSound=noone
 fader=noone
-		
+noplane=false;
 trigger04 = false;
 fadeOutStarted= false;
-
+fout=false;
 sndTranscript01=_5_transcript_part01_wav
 sndTranscript02=_4_transcript_part02_wav
 sndTranscript02Break=_3_transcript_part02_breakdown_wav
@@ -32,7 +32,9 @@ function construct(){
 	if(audio_is_playing(currentSound)){
 		audio_stop_sound(currentSound)}
 	trigger04 = false;
+	noplane=true
 	//fader.fadeTo(0, FADE_DURATION);
+	//alarm[0]=FADE_DURATION
 		if (global.kindness)
 			{
 				currentSound = sndTranscript04;
@@ -48,6 +50,7 @@ function construct(){
 		
  function fadeOut()
 		{
+		
 			fader = new SfxFader(currentSound);
 			addTween(fader);
 			fader.fadeTo(0, 6  * FP.assignedFrameRate);

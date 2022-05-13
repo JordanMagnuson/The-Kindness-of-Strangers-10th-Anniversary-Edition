@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
+
+
 if (global.coll01)
 		{
 			if (currentSound != sndTranscript02 && currentSound != sndTranscript02Break && !audio_is_playing(sndTranscript01) )
@@ -45,7 +48,11 @@ if (global.coll01)
 				scale2 = global.player.x/scale1;
 				scale3=0+ scale2
 				scale4=1 - (1* scale2)
+				
+				audio_falloff_set_model(audio_falloff_linear_distance);
+				audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 1, 0, 0, true, 5);
 				audio_sound_gain(soundPlane, scale3, 0);
+				
 				
 				
 			}

@@ -6,7 +6,7 @@ alarm[1]=(320-y)/5
 image_speed=0;
 make_glitch=true
 movement=1;
-jump=9.2;
+jump=8
 direction=0;
 onground=false;
 walljumping=0;
@@ -131,10 +131,10 @@ function goo(){
 }
 
 function construct(_x,_y){
-	mGravity=1.6;
+	mGravity=0.4;
 	mMaxSpeedx=4;
-	mMaxSpeed=[4,9.2];
-	mMaxSpeedy=9.2;
+	mMaxSpeed=[4,8];
+	mMaxSpeedy=8;
 	mFriction = [0.5,0.5];
 	depth=-2;
 	//setHitbox(12,24,-10,-8);

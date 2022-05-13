@@ -37,8 +37,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "The_Kindness_of_Strangers",
+    "path": "The_Kindness_of_Strangers.yyp",
   },
   "resourceVersion": "1.0",
   "name": "obj_maze_top",

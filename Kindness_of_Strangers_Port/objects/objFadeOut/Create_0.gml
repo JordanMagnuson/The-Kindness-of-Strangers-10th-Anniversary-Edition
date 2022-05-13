@@ -58,7 +58,11 @@ function switchWorlds()
 				instance_destroy(global.airplane2);
 				audio_stop_sound(_11_plane_sound)
 		//		room_instance_clear(room);
-				
+				if(instance_exists(objSoundController)){
+					if(audio_is_playing(global.SC.currentSound)){
+						audio_stop_sound(global.SC.currentSound)
+					}
+				}
 				
 				if(_goto==1){room_goto(Room1);}
 				if(_goto==2){room_goto(Room2);}

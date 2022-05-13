@@ -15,6 +15,7 @@ event_inherited();
  poweredUp=false;
  imgBubble=spr_talk_bubble
  imgArrow=spr_up;
+ flipped=false
 alarm[0]=1
 falling=false;
 function construct(_x,_y){
@@ -35,11 +36,14 @@ function construct(_x,_y){
 	else{
 	direction=0;}
 	faceDirection();
-	var iB= instance_create_depth(0,0,0,obj_photoHelper)
-	iB.sprite_index=spr_talk_bubble
-	iB.image_blend=global.BG_COLOR;
-
-	imgBubble=iB;
+//	var iB= instance_create_depth(0,0,0,obj_photoHelper)
+//	iB.sprite_index=spr_talk_bubble
+//	iB.image_blend=global.BG_COLOR;
+//	imgBubble= instance_create_depth(0,0,0,obj_photoHelper)
+//	imgBubble.sprite_index=spr_talk_bubble
+//	imgBubble.image_blend=global.BG_COLOR;
+//	imgBubble.image_alpha=0;
+	//imgBubble=iB;
 //	instance_destroy(iB);
 
 	
@@ -73,12 +77,19 @@ if((showTalkBubble and helped==false) or ignore=true){
 	oB= instance_create_depth(x,y-10,-1,obj_photoHelper);
 	oA= instance_create_depth(x+3,y-8,-3,obj_photoHelper);
 	
-	oB.sprite_index=imgBubble.sprite_index
-	oA.sprite_index=imgArrow.sprite_index
+	//oB.sprite_index=imgBubble.sprite_index
+	oB.sprite_index=spr_talk_bubble
+	//oB.x=imgBx
+	//oB.y=imgBy
+	//oA.sprite_index=imgArrow.sprite_index
+	oA.sprite_index=imgArrow
+//	oA.x=imgAx
+//	oA.y=imgAy
+	
 	ignore=false
 //	 oB.image_alpha=0;
 //	oA.image_alpha=0;
-	
+//	instance_destroy(imgBubble)
 }
 
 else if(!showTalkBubble  and destruct=true){
@@ -95,19 +106,28 @@ else if(!showTalkBubble  and destruct=true){
 }
 
 function updateTalkBubble(){
+
+	
 	if(direction==0){
 	//	imgBubble.flipped=false;
-		imgBubble.x=sprite_width+imgBubble.sprite_width;
+		//imgBubble.x=sprite_width+imgBubble.sprite_width;
+		imgBx=sprite_width+14
+		flipped=false
 	}
 	else{
-		imgBubble.flipped=true;
-		imgBubble.x=-5;
+		//imgBubble.flipped=true;
+		//imgBubble.x=-5;
+		flipped=true;
+		imgBx=-5;
 	
 	}
 	
-	imgBubble.y=-5;
-	imgArrow.x=imgBubble.x+1;
-	imgArrow.y=imgBubble.y+1;
+	//imgBubble.y=-5;
+	imgBy=-5;
+	//imgArrow.x=imgBubble.x+1;
+	imgAx=imgBx+1
+	//imgArrow.y=imgBubble.y+1;
+	imgAy=imgBy+1
 	self.render();
 
 

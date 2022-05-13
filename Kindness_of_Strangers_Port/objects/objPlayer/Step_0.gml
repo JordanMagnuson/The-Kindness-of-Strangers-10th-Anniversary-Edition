@@ -22,9 +22,10 @@ if(stepReturn ==false){
 if(x<0 || x>room_width){
 
 	if(y>room_height/3 and !global.died and !global.airplane2.playerTrigger03){
-	//	global.died=true;
-		//room_goto(rmGameOver)
-		//global.soundController.fadeOut();
+		global.died=true;
+		var Fo=instance_create_depth(0,0,-100,objFadeOut)
+		Fo.construct(5,6,0);
+	
 	}
 }
 onground=false;
@@ -72,7 +73,12 @@ if(!stunned){
 		movex=false
 		}
 }
-
+if(_speed[0]<0){
+	absspeed=_speed[0]*-1}
+else{
+	absspeed=_speed[0];}
+if ( (!keyboard_check(global.keyLeft) && ! keyboard_check(global.keyRight)) || absspeed > mMaxspeed[0] ) { 
+	fric(true, false); }
 
 if(!stunned && keyboard_check_pressed(global.keyA)){
 	//direction=90
@@ -100,29 +106,62 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 	}
 		
 }
+//	grav();
+//	maxspeed(false,true);
+//	if(_speed[1]<0 and !(keyboard_check_pressed(global.keyA))){
+//		grav();
+//		grav();
+	
+//	}
+	if(!keyboard_check_pressed(global.keyA)  &&  _speed[1]<0  ){
+	//	_speed[1]=0;
+		}
 	grav();
-	maxspeed(true,true);
+	maxspeed(false,true);
 	if(_speed[1]<0 and !(keyboard_check_pressed(global.keyA))){
 		grav();
-		grav();
-	
-	}
-	if(!keyboard_check_pressed(global.keyA)){
-		_speed[1]=0;
+		grav();}
 		//direction=270
-	}
+
 
 	if(keyboard_check_pressed(global.keyA)){
 		
 		//show_message("goo" + string(_speed[1]))
 		
 		}
-//	_speed[0]+=acceleration[0];
+		
+	if	(onground){
+		if(_speed[0]<0){
+			sprite_index=walkLeft
+			image_speed=0.2}
+		if(_speed[0]>0){
+			sprite_index=walkRight
+			image_speed=0.2}
+		if(_speed[0]==0){
+			if(direction==0){
+				sprite_index=standRight}
+			if(direction==180){
+				sprite_index=standLeft}   }
+	}
+	else {
+		if(direction==0){
+				sprite_index=jumpRight}
+		if(direction==180){
+				sprite_index=jumpLeft}
+		if(place_meeting(x-1,y,objMaze)){
+				sprite_index=slideRight}
+		if(place_meeting(x+1,y,objMaze)){
+				sprite_index=slideLeft}
+	
+	}	
+		
+
+	//_speed[0]+=acceleration[0];
 	goo();	
 	if(movex){
 		motion(true,true,_speed[0],_speed[1]);}
 	if(!movex){
-		motion(false,true,_speed[0],_speed[1]);
+		motion(true,true,_speed[0],_speed[1]);
 	}
 	//go();
 //	grav();
