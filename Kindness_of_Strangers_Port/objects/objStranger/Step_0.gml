@@ -5,7 +5,9 @@ if(global.help){
 	checkHelp();
 	faceDirection();
 	updateTalkBubble();
+
 }
+
 /*
 if(falling=true){
 	y=y+0.4;

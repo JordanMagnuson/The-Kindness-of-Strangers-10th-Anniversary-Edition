@@ -5,13 +5,13 @@
  show= true;
  currentPhotoArray= spr_photos
 currentIndex=0;
-
+init=true;
  currentPhoto=noone;
  lastPhoto=noone;
-/*
+
 alarm[0]=DISPLAY_TIME;
 alarm[1]=START_TIME;
-*/
+
 function start(){
 	currentPhoto=instance_create_depth(0,0,0,obj_PhotoBackdrop);
 	ph=instance_create_depth(0,0,0,obj_photoHelper)

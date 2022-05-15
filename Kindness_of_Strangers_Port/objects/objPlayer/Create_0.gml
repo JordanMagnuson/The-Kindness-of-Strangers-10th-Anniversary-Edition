@@ -13,9 +13,9 @@ walljumping=0;
 doublejump=false;
 dead=false;
 stunned=false;
-start = noone;
+starts = noone;
 rescale=false;
-coll=false
+colll=false
 bbx=12/sprite_width
 bby=24/sprite_height
 
@@ -131,7 +131,7 @@ function goo(){
 }
 
 function construct(_x,_y){
-	mGravity=0.4;
+	mGravity=0.5;
 	mMaxSpeedx=4;
 	mMaxSpeed=[4,8];
 	mMaxSpeedy=8;

@@ -21,8 +21,8 @@ if(room==Room4){
 	if(keyboard_check_pressed(vk_space)){
 			global.kindness=true;
 		//room_instance_clear(Room1);
-		game_restart()
-		//room_goto(Room1);
+		
+		room_goto(Room1);
 	}
 
 
@@ -32,8 +32,8 @@ if(room==Room5){
 	if(keyboard_check_pressed(vk_space)){
 		global.kindness=true;
 	//	room_instance_clear(Room1);
-		game_restart()
-		//	room_goto(Room1);
+		//game_restart()
+		room_goto(Room1);
 			}
 
 }

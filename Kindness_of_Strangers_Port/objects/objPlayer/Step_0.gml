@@ -1,10 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+
 stepReturn=false;
-if(falling=true){
-	y+=5
-}
+//if(falling=true){
+	//y+=5
+//}
 
 if(dead){
 	image_alpha -= 0.1;
@@ -12,7 +13,7 @@ if(dead){
 
 	}
 
-else if (image_alpha < 1  ){
+else if (image_alpha < 1 && !stunned  ){
 	image_alpha += 0.1;
 }
 
@@ -95,7 +96,7 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 		
 	if(place_meeting(x+1,y,objMaze) and !jumped and walljumping!=3){
 		_speed[1]=-jump;
-		_speed[0]=mMaxSpeed[0]*2;
+		_speed[0]=mMaxSpeed[0]*-2;
 		walljumping=1;
 		jumped=true;}
 		
@@ -113,12 +114,14 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 //		grav();
 	
 //	}
-	if(!keyboard_check_pressed(global.keyA)  &&  _speed[1]<0  ){
+	if(!keyboard_check(global.keyA)  &&  _speed[1]<0  ){
 	//	_speed[1]=0;
 		}
+	
 	grav();
+
 	maxspeed(false,true);
-	if(_speed[1]<0 and !(keyboard_check_pressed(global.keyA))){
+	if(_speed[1]<0 and !(keyboard_check(global.keyA))){
 		grav();
 		grav();}
 		//direction=270
@@ -129,7 +132,7 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 		//show_message("goo" + string(_speed[1]))
 		
 		}
-		
+
 	if	(onground){
 		if(_speed[0]<0){
 			sprite_index=walkLeft
@@ -154,17 +157,15 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 				sprite_index=slideLeft}
 	
 	}	
-		
+
 
 	//_speed[0]+=acceleration[0];
 	goo();	
-	if(movex){
-		motion(true,true,_speed[0],_speed[1]);}
-	if(!movex){
+
+
 		motion(true,true,_speed[0],_speed[1]);
-	}
+
 	//go();
 //	grav();
 }
-
 

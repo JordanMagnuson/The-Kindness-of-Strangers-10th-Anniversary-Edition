@@ -12,8 +12,9 @@ vspeed=objPlayer.vspeed
 direction=objPlayer.direction
 }
 */
+if(instance_exists(objPlayer)){
 x=camera_get_view_x(view_camera[0])+global.player._speed[0]
-y=camera_get_view_y(view_camera[0])+global.player._speed[1]
+y=camera_get_view_y(view_camera[0])+global.player._speed[1]}
 
 if(instance_exists(objPlane2) && instance_exists(objSoundController) && global.SC.currentSound==_1_transcript_part04_wav ){
 
@@ -23,7 +24,7 @@ if(x<0){x=0}
 if(y<0){y=0}
 }
 
-else{
+else if (instance_exists(objPlayer)){
 //y=global.player.y-(480/2)
 x=(global.player.x-oldx)+camera_get_view_x(view_camera[0])
 y=(global.player.y-oldy)+camera_get_view_y(view_camera[0])

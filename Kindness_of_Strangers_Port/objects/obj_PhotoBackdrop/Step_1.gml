@@ -1,7 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(instance_exists(objPlayer)){
 oldx=global.player.x
-oldy=global.player.y;
+oldy=global.player.y;}
 //x= global.player.x//- camera_get_view_x(view_camera[0]);
 //y= global.player.y//- camera_get_view_y(view_camera[0]);
 

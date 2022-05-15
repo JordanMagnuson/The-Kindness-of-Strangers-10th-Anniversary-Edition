@@ -22,7 +22,7 @@ scale3=0   + scale2
 scale4=-1 - (1* scale2)
 				
 audio_falloff_set_model(audio_falloff_linear_distance);
-audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 1, 0, 0, true, 5);
+//audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 1, 0, 0, true, 5);
 audio_sound_gain(soundPlane, scale3, 0);
 
 

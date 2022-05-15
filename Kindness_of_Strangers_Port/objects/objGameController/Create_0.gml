@@ -1,12 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+
+
 Globals()
 ColorsInit()
 LevelData()
 randomize();
 #macro SCALE 2
+//alarm[1]=2
 
-window_set_size(browser_width,browser_height)
 function loadlevel(){
 	
 	//ds=ds_map_create();
@@ -99,7 +102,22 @@ function loadlevel(){
 		oS =  oS.construct(_x,_y);
 		o++;
 	}
-	
+	global.player=instance_create_depth(0,0,0,objPlayer)
+global.player.construct(x,y);
+global.player.stunned=true
+global.player.image_alpha=0;
+	global.airplane = instance_create_depth(0,0,0,objPlane)
+global.airplane.construct(0,0)
+global.airplane2= instance_create_depth(0,0,0,objPlane2)
+global.airplane2.construct(room_width+100, room_height-150);
+//room_height=global.mt.sprite_height+global.mb.sprite_height+320
+//room_width=global.mt.sprite_width;
+
+//alarm[0]=room_speed*10
+//alarm[1]=room_speed*8
+camera_destroy(view_camera[0]);
+view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.airplane, -1, -1, room_width, -1);
+
 
 
 
@@ -109,15 +127,5 @@ function loadlevel(){
 
 
 }
-loadlevel()
-global.airplane = instance_create_depth(0,0,0,objPlane)
-global.airplane.construct(0,0)
-global.airplane2= instance_create_depth(0,0,0,objPlane2)
-global.airplane2.construct(room_width+100, room_height-150);
-//room_height=global.mt.sprite_height+global.mb.sprite_height+320
-//room_width=global.mt.sprite_width;
-global.PC=instance_create_depth(0,0,0,obj_PhotoController);
-alarm[0]=room_speed*10
-alarm[1]=room_speed*8
-camera_destroy(view_camera[0]);
-view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.airplane, -1, -1, room_width, -1);
+
+

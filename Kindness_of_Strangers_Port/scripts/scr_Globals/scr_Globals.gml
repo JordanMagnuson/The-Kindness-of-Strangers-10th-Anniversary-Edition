@@ -11,9 +11,9 @@ global.soundon=true
 
 global.keyUp=ord("W")
 global.keyDown=ord("S")
-global.keyLeft=ord("A")
-global.keyRight=ord("D")
-global.keyA=ord("L")
+global.keyLeft=vk_left
+global.keyRight=vk_right
+global.keyA=ord("X")
 
 global.airplane=noone
 global.airplane2=noone

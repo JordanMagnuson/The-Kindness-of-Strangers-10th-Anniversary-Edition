@@ -7,11 +7,11 @@ if(rescale=true){
 	rescale=false;
 
 }
-if(coll=false){
+if(colll=false){
 	
 	
-	if(onground){objPlayer.image_blend=c_red}
-	if(!onground){objPlayer.image_blend=c_purple}
+//	if(onground){objPlayer.image_blend=c_red}
+//	if(!onground){objPlayer.image_blend=c_purple}
 }
 
 

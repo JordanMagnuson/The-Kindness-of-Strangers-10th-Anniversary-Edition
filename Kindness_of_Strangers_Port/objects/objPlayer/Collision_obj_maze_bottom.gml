@@ -2,7 +2,7 @@
 // You can write your code in this editor
 /// @description Insert description here
 // You can write your code in this editor
-coll=true
+colll=true
 with(other){
 	/*
 	party=coll(0,0,0)
@@ -40,7 +40,7 @@ with(other){
 		
 		
 		
-				objPlayer.image_blend=c_green
+			//	objPlayer.image_blend=c_green
 				
 				
 				

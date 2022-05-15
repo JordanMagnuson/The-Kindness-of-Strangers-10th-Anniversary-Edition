@@ -69,10 +69,10 @@ function motion(mx=true, my=true, spx, spy){
 		}
 	if(my){
 
-	
+
 		if(!(moty(self,spy))){_speed[1]=0;acceleration[1]=[0];}
 		//vspeed+=acceleration[1]
-		
+
 	//	vspeed+=1
 	//	_speed[1]+=acceleration[1]
 	//	y+=_speed[1];
@@ -141,7 +141,7 @@ function motx(e,_spdx){
 	while(i<spdx){
 		var moved=false;
 		var below=true;
-		if(!   e.place_meeting(  e.x,e.y+1,objMaze        )    /* objMaze.coll(e.x,e.y+1,1)*/  )                  {
+		if(! e.place_meeting(  e.x,e.y+1,objMaze        )    /* objMaze.coll(e.x,e.y+1,1)*/  )                  {
 			below=false;}
 		s=0;
 		while(s<=slopeHeight){
@@ -177,20 +177,24 @@ function motx(e,_spdx){
 function moty(e, _spdy){
 	i=0;
 
+
 		if(_spdy<0){
 		var spdy=_spdy*-1;
 	}	
 	else {var spdy=_spdy;}
-	while(i < spdy){
+	while(i <= spdy){
 		if(_spdy<0){
 			var f=-1;}
 		else{  f=1;}
-		if(!e.place_meeting(e.x,e.y+_spdy/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
+
+		if(! (place_meeting(x,y+f/**f*/,objMaze) )     /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
 			//if(objMaze.coll()){}
+
 			if(_spdy<0){
-			e.y+=2*f}//*f
+			 
+			y+=f}//*f
 			else{
-			e.y+=f}
+			y+=f}
 			
 			
 		}
@@ -205,7 +209,14 @@ function moty(e, _spdy){
 }
 
 function motxx(e, _spdx){
-	i=0;
+	//i=0;
+	var wj=0;
+	var w=0;
+	if(e.typing="Player"){
+		w=e.walljumping;
+	}
+	
+	
 	var leftx=e.x;
 	var rightx=e.x;
 	var boolrx=true;
@@ -215,11 +226,19 @@ function motxx(e, _spdx){
 		var spdx=_spdx*-1;
 		 f=-1;
 	}	
-	else {var spdx=_spdx;}
-	while(i < spdx){
+		else {var spdx=_spdx;}
+	if(w==1){
+		wj=-1}
+	else if(w==2){
+		wj=-1;}
+	else{
+		wj=0;}
+	savedwj=wj;
+	
+	while(wj < spdx){
 	
 		
-		if(!  e.place_meeting(rightx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
+		if(!place_meeting(rightx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
 			//if(objMaze.coll()){}
 			rightx+=f//*f
 			}		
@@ -228,13 +247,13 @@ function motxx(e, _spdx){
 			//	show_message("Presto");
 				}
 			boolrx= false;}
-		i++;
+		wj++;
 	}
-	i=0;
-	while(i < spdx){
+	wj=savedwj;
+	while(wj < spdx){
 	
 	
-		if(!  e.place_meeting(leftx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
+		if(!place_meeting(leftx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
 			//if(objMaze.coll()){}
 			leftx+=f//*f
 			}		
@@ -243,30 +262,30 @@ function motxx(e, _spdx){
 //show_message("Presto")
 				;}
 			boollx = false;}
-		i++;
+		wj++;
 	}
-	i=0;
+	wj=savedwj;
 	var copyleft =leftx;
 	var copyright= rightx;
 	if(boollx==false and boolrx==false){
 		//show_message("gooma");	
 		
-		while(i<spdx){
-			if(!e.place_meeting(copyleft-i,e.y/**f*/,objMaze)  ){
-				copyleft-=i;
+		while(wj<spdx){
+			if(!place_meeting(copyleft-wj,e.y/**f*/,objMaze)  ){
+				copyleft-=wj;
 				boollx=true;
 				break;
 			}
-			i++;
+			wj++;
 		}
-		i=0;
-		while(i<spdx){
-			if(!e.place_meeting(copyright+i,e.y/**f*/,objMaze)  ){
-				copyright+=i;
+		wj=savedwj;
+		while(wj<spdx){
+			if(!place_meeting(copyright+wj,e.y/**f*/,objMaze)  ){
+				copyright+=wj;
 				boolrx=true;
 				break;
 			}
-			i++;
+			wj++;
 		}
 		leftx=copyleft;
 		rightx=copyright;

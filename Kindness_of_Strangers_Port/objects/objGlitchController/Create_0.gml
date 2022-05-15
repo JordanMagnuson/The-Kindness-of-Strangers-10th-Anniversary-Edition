@@ -107,13 +107,19 @@ with(objStranger){
 }
 
 function destroy(){
+	/*
 with(objStranger){
 	showTalkBubble=false;
 	destruct=true;
+	helped=true;
 	self.render();
 }
 
 global.help=false;
+*/
+with(obj_photoHelper){
+	instance_destroy();
+}
 instance_destroy()
 
 
