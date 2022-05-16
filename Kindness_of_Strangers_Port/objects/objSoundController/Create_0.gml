@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
  FADE_DURATION = 4 *room_speed
-		
+stopsound=true
 currentSound=noone
 fader=noone
 noplane=false;

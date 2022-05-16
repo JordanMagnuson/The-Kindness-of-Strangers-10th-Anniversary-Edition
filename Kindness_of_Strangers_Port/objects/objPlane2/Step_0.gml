@@ -6,9 +6,10 @@ playerTrigger03=true
 global.player.stunned=true
 global.player.hspeed=0;
 //global.player.vspeed=2;
-audio_play_sound(soundPlane,5,true)
+//audio_play_sound(soundPlane,5,true)
 //sound plane.loop
 }
+
 
 
 if(playerTrigger03){
@@ -21,9 +22,18 @@ scale2 = x/scale1;
 scale3=0   + scale2
 scale4=-1 - (1* scale2)
 				
-audio_falloff_set_model(audio_falloff_linear_distance);
-//audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 1, 0, 0, true, 5);
-audio_sound_gain(soundPlane, scale3, 0);
+				
+if(x<=0 && stopsound){
+	stopsound=false
+	audio_stop_sound(soundPlane)
+}				
+//audio_falloff_set_model(audio_falloff_linear_distance);
+if(stopsound){
+audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 1, 300, 0, true, 4);
+audio_sound_gain(soundPlane,scale3, 0);
+}
+
+
 
 
 }

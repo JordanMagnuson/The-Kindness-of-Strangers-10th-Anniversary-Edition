@@ -10,6 +10,7 @@
  mMaxspeed= [3,8];
  moty=noone;
  motx=true;
+ onground=false;
  accelx=false;
  accely=false;
  coll=false
@@ -210,11 +211,12 @@ function moty(e, _spdy){
 
 function motxx(e, _spdx){
 	//i=0;
+
+	
 	var wj=0;
 	var w=0;
-	if(e.typing="Player"){
-		w=e.walljumping;
-	}
+	if(e._type="Player"){
+		w=e.walljumping;}
 	
 	
 	var leftx=e.x;
@@ -230,12 +232,13 @@ function motxx(e, _spdx){
 	if(w==1){
 		wj=-1}
 	else if(w==2){
-		wj=-1;}
+		wj=1;}
 	else{
 		wj=0;}
 	savedwj=wj;
-	
-	while(wj < spdx){
+
+	i=0;
+	while(i < spdx){
 	
 		
 		if(!place_meeting(rightx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
@@ -248,9 +251,11 @@ function motxx(e, _spdx){
 				}
 			boolrx= false;}
 		wj++;
+		i++;
 	}
 	wj=savedwj;
-	while(wj < spdx){
+	i=0;
+	while(i < spdx){
 	
 	
 		if(!place_meeting(leftx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
@@ -263,29 +268,36 @@ function motxx(e, _spdx){
 				;}
 			boollx = false;}
 		wj++;
+		i++;
 	}
+
+
+
 	wj=savedwj;
 	var copyleft =leftx;
 	var copyright= rightx;
-	if(boollx==false and boolrx==false){
+	if(boollx==false and boolrx==false ){
 		//show_message("gooma");	
 		
 		while(wj<spdx){
-			if(!place_meeting(copyleft-wj,e.y/**f*/,objMaze)  ){
-				copyleft-=wj;
+			
+			if(!place_meeting(copyleft+wj,e.y/**f*/,objMaze)  ){
+				if((w!=1 and w!=2) ){
+					copyleft+=wj;}
 				boollx=true;
 				break;
 			}
 			wj++;
 		}
 		wj=savedwj;
-		while(wj<spdx){
+		while(wj>  spdx*-1){
 			if(!place_meeting(copyright+wj,e.y/**f*/,objMaze)  ){
-				copyright+=wj;
+				if((w!=1 and w!=2) ){
+					copyright+=wj;}
 				boolrx=true;
 				break;
 			}
-			wj++;
+			wj--;
 		}
 		leftx=copyleft;
 		rightx=copyright;
@@ -295,13 +307,18 @@ function motxx(e, _spdx){
 	
 	if(f==1){
 		if(boolrx==true){
-			e.x=rightx;}
+			e.x=rightx;
+	
+			
+			}
 		return boolrx;	
 		
 	}
 	if(f==-1){
 		if(boollx==true){
-			e.x=leftx;}
+			e.x=leftx;
+		
+			}
 		return boollx;
 	}
 	

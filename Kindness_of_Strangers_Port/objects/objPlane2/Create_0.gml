@@ -5,6 +5,7 @@
 //soundPlane
 fadeOutStarted=false
 playerTrigger03=false
+stopsound=true
 soundPlane=_11_plane_sound
 function construct(_x,_y){
 

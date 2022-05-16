@@ -17,13 +17,19 @@ global.SC.construct();}
 }
 
 	camera_destroy(view_camera[0]);
-		show_message("1")
+
 	view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.player, -1, -1, room_width, room_height);
-	show_message("2")
+
 	camera_set_view_target(view_camera[0], global.player);
 }
 
+if(x >= room_width * 1.5 -3000  && stopsound  ){
+	//audio_stop_sound(soundPlane)
+	audio_stop_sound(soundPlane)
+	stopsound=false
+}
 if(x > room_width * 1.5){
+	//audio_stop_sound(soundPlane)
 	instance_destroy();	
 }
 
@@ -39,10 +45,11 @@ scale4=0+ scale2
 //show_message(string(scale3))
 //show_message()
 //show_message()
-audio_falloff_set_model(audio_falloff_linear_distance);
-//audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 1, 0, 0, true, 5);
+//audio_falloff_set_model(audio_falloff_linear_distance);
+if(stopsound){
+audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 1, 300, 0, true, 5);
 audio_sound_gain(soundPlane,scale3, 0);
-
+}
 
 
 
