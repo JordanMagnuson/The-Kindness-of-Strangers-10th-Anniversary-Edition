@@ -29,7 +29,7 @@ function construct(_x,_y){
 	mGravity=0.4;
 	mMaxspeed=[4,4];
 	mFriction=[0.5,0.5];
-	typing="Stranger";
+	_type="Stranger";
 	r=random(1);
 	if(r<=0.5){
 	direction=180;}
