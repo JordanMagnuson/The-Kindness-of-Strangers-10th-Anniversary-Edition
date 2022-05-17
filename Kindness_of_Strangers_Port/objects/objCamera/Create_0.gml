@@ -20,11 +20,10 @@ function canvas_fullscreen(w, h) {
 
 	view_set_wport(target_view, global.browser_width_hdpi);
 	view_set_hport(target_view, global.browser_height_hdpi);
-
 	window_set_size(global.browser_width_hdpi, global.browser_height_hdpi);
 	display_set_gui_size(global.browser_width_hdpi, global.browser_height_hdpi);
 	window_center();
-
+//	window_set_position(1, 1);
 	global.aspect_ratio = (w / h);
 	
 	// Tall.
@@ -34,12 +33,16 @@ function canvas_fullscreen(w, h) {
 	  view_width = (view_height * global.aspect_ratio);	
 	}
 	// Wide. 
-	else
+	else  if(global.aspect_ratio > aspect_default)
 	{
 		view_width = view_width_default;	
 		view_height = (view_width / global.aspect_ratio);
 	}
-
+//	else{
+	//	view_width = view_width_default;	
+	//	view_height =  view_height_default;
+		
+	//	}
 	// Set GUI scale depending on window size.
 	global.gui_width = display_get_gui_width();
 	global.gui_height = display_get_gui_height();	
@@ -55,18 +58,22 @@ function canvas_fullscreen(w, h) {
 	else {
 		global.gui_scale = 4;
 	}
-
-	camera_set_view_size(view_camera[target_view], view_width, view_height);
-
+	if(room!=Room0){
+		camera_set_view_size(view_camera[target_view], view_width, view_height);}
+	else{
+		camera_set_view_size(view_camera[target_view], view_width_default, view_height_default);
+	}
+	
 	// resize application_surface, if needed
 	if (application_surface_is_enabled()) {
 		surface_resize(application_surface, global.browser_width_hdpi, global.browser_height_hdpi);
+		//surface_resize(application_surface, view_width,view_height);
 	}
 
 	// set canvas size to page pixel size.
 	// Uncomment if browser_hdpi extension is available.
 	// See https://yellowafterlife.itch.io/gamemaker-html5-hdpi-support	
-	// browser_stretch_canvas(w, h);
+	//browser_stretch_canvas(w, h);
 
 	show_debug_message("window resized");
 }
