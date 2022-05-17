@@ -10,8 +10,6 @@ alarm[0] = DISPLAY_DURATION
 planeexists=true;
 image_prealpha=image_alpha
 i=2;
-oldy=global.player.y
-oldx=global.player.x
 stopy=1;
 function construct(source,source_index){
 	sprite_index=source;

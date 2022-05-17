@@ -6,7 +6,7 @@ if(global.kindness){global.SC=instance_create_depth(0,0,0,objSoundController)
 
 	
 global.SC.construct();}
-	//global.PC=instance_create_depth(0,0,0,obj_PhotoController);
+	global.PC=instance_create_depth(0,0,0,obj_PhotoController);
 	playerDropped=true
 	global.player.x=x
 	global.player.y=y
