@@ -5,4 +5,3 @@
 last_browser_width = browser_width;
 last_browser_height = browser_height;	
 canvas_fullscreen(browser_width, browser_height);
-//window_set_size(640,480)

@@ -5,8 +5,6 @@ if (last_browser_width != browser_width || last_browser_height != browser_height
 	last_browser_width = browser_width;
 	last_browser_height = browser_height;	
 	canvas_fullscreen(browser_width, browser_height);
-	//canvas_fullscreen(640,480);
-	//window_set_size(640,480)
 }
 
 // Unfollow, if follow object is destroyed.
@@ -56,9 +54,4 @@ else if (y > room_height - view_height / 2) {
 }
 
 // Move the camera to new position.
-if(room!=Room0){
-camera_set_view_pos(view_camera[target_view], x - view_width / 2, y - view_height / 2);}
-else{
-camera_set_view_pos(view_camera[target_view], 0,0);
-
-}
+camera_set_view_pos(view_camera[target_view], x - view_width / 2, y - view_height / 2);
