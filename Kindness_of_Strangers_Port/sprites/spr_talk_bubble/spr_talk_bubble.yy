@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_talk_bubble","path":"sprites/spr_talk_bubble/spr_talk_bubble.yy",},
-    "resourceVersion": "1.4",
+    "resourceVersion": "1.3",
     "name": "spr_talk_bubble",
     "tags": [],
     "resourceType": "GMSequence",

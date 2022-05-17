@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_plane","path":"sprites/spr_plane/spr_plane.yy",},
-    "resourceVersion": "1.4",
+    "resourceVersion": "1.3",
     "name": "spr_plane",
     "tags": [],
     "resourceType": "GMSequence",

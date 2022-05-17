@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"standLeft","path":"sprites/standLeft/standLeft.yy",},
-    "resourceVersion": "1.4",
+    "resourceVersion": "1.3",
     "name": "standLeft",
     "tags": [],
     "resourceType": "GMSequence",

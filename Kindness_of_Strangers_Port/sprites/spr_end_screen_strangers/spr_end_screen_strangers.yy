@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_end_screen_strangers","path":"sprites/spr_end_screen_strangers/spr_end_screen_strangers.yy",},
-    "resourceVersion": "1.4",
+    "resourceVersion": "1.3",
     "name": "spr_end_screen_strangers",
     "tags": [],
     "resourceType": "GMSequence",

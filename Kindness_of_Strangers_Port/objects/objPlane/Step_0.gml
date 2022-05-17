@@ -6,7 +6,7 @@ if(global.kindness){global.SC=instance_create_depth(0,0,0,objSoundController)
 
 	
 global.SC.construct();}
-		global.PC=instance_create_depth(0,0,0,obj_PhotoController);
+	//global.PC=instance_create_depth(0,0,0,obj_PhotoController);
 	playerDropped=true
 	global.player.x=x
 	global.player.y=y
@@ -16,11 +16,12 @@ global.SC.construct();}
 	//	alarm[0]=10;
 }
 
-	camera_destroy(view_camera[0]);
-
-	view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.player, -1, -1, room_width, room_height);
-
-	camera_set_view_target(view_camera[0], global.player);
+	// Use objCamera to handle camera, so that we have more control over responsive fullscreen functionality
+	objCamera.follow = global.player;
+	
+	//camera_destroy(view_camera[0]);
+	//view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.player, -1, -1, room_width, room_height);
+	//camera_set_view_target(view_camera[0], global.player);
 }
 
 if(x >= room_width * 1.5 -3000  && stopsound  ){

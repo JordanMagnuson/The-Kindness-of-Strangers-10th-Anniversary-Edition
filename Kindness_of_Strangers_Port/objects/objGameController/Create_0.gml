@@ -115,8 +115,11 @@ global.airplane2.construct(room_width+100, room_height-150);
 
 //alarm[0]=room_speed*10
 //alarm[1]=room_speed*8
-camera_destroy(view_camera[0]);
-view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.airplane, -1, -1, room_width, -1);
+
+// Use objCamera to handle camera, so that we have more control over responsive fullscreen functionality.
+instance_create_depth(0,0,0,objCamera);
+//camera_destroy(view_camera[0]);
+//view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.airplane, -1, -1, room_width, -1);
 
 
 

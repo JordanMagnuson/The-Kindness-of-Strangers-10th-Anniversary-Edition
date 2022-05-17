@@ -87,7 +87,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"walkRight","path":"sprites/walkRight/walkRight.yy",},
-    "resourceVersion": "1.4",
+    "resourceVersion": "1.3",
     "name": "walkRight",
     "tags": [],
     "resourceType": "GMSequence",

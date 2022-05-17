@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"slideRight","path":"sprites/slideRight/slideRight.yy",},
-    "resourceVersion": "1.4",
+    "resourceVersion": "1.3",
     "name": "slideRight",
     "tags": [],
     "resourceType": "GMSequence",

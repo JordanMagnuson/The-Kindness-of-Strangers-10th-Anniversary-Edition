@@ -87,7 +87,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"walkLeft","path":"sprites/walkLeft/walkLeft.yy",},
-    "resourceVersion": "1.4",
+    "resourceVersion": "1.3",
     "name": "walkLeft",
     "tags": [],
     "resourceType": "GMSequence",

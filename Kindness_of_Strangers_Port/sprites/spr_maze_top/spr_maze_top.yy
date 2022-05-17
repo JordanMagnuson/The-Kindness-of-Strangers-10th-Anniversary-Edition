@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spr_maze_top","path":"sprites/spr_maze_top/spr_maze_top.yy",},
-    "resourceVersion": "1.4",
+    "resourceVersion": "1.3",
     "name": "spr_maze_top",
     "tags": [],
     "resourceType": "GMSequence",
