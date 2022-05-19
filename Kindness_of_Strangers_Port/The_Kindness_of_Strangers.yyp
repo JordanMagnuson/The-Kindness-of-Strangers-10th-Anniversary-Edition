@@ -15,6 +15,7 @@
     {"id":{"name":"_7_powerup04_wav","path":"sounds/_7_powerup04_wav/_7_powerup04_wav.yy",},"order":10,},
     {"id":{"name":"spr_stranger","path":"sprites/spr_stranger/spr_stranger.yy",},"order":2,},
     {"id":{"name":"spr_maze_top","path":"sprites/spr_maze_top/spr_maze_top.yy",},"order":10,},
+    {"id":{"name":"objCameraKeepAspect","path":"objects/objCameraKeepAspect/objCameraKeepAspect.yy",},"order":31,},
     {"id":{"name":"obj_PhotoBackdrop","path":"objects/obj_PhotoBackdrop/obj_PhotoBackdrop.yy",},"order":7,},
     {"id":{"name":"spr_trigger","path":"sprites/spr_trigger/spr_trigger.yy",},"order":17,},
     {"id":{"name":"_6_powerup05_wav","path":"sounds/_6_powerup05_wav/_6_powerup05_wav.yy",},"order":9,},
