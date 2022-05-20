@@ -16,6 +16,9 @@ event_inherited();
  imgBubble=spr_talk_bubble
  imgArrow=spr_up;
  flipped=false
+ oB=noone
+ oA=noone
+ glitch=false
 alarm[0]=1
 falling=false;
 function construct(_x,_y){
@@ -73,16 +76,22 @@ function checkHelp(){
 
 function render(){
 if((showTalkBubble and helped==false) or ignore=true){
+
 	helped=true;
-	oB= instance_create_depth(x,y-10,-1,obj_photoHelper);
-	oA= instance_create_depth(x+3,y-8,-3,obj_photoHelper);
+	oB= instance_create_depth(x,y,-1,obj_photoHelper);
+	oA= instance_create_depth(x,y,-3,obj_photoHelper);
 	
-	//oB.sprite_index=imgBubble.sprite_index
+	//oB= instance_create_depth(x+imgBx,y+imgBy,0,obj_photoHelper);
+	
+//	oA= instance_create_depth(x+imgAx,y+imgAy,-3,obj_photoHelper);
 	oB.sprite_index=spr_talk_bubble
+	oA.sprite_index=imgArrow
+	//oB.sprite_index=imgBubble.sprite_index
+
 	//oB.x=imgBx
 	//oB.y=imgBy
 	//oA.sprite_index=imgArrow.sprite_index
-	oA.sprite_index=imgArrow
+
 //	oA.x=imgAx
 //	oA.y=imgAy
 	
@@ -98,6 +107,8 @@ else if(!showTalkBubble  and destruct=true){
 		
 		instance_destroy(oB);
 		instance_destroy(oA);	
+		oB=noone
+		oA=noone
 		helped=false;}
 
 }
@@ -111,24 +122,32 @@ function updateTalkBubble(){
 	if(direction==0){
 	//	imgBubble.flipped=false;
 		//imgBubble.x=sprite_width+imgBubble.sprite_width;
-		imgBx=sprite_width+14
+		imgBx=x+24
 		flipped=false
 	}
 	else{
 		//imgBubble.flipped=true;
 		//imgBubble.x=-5;
 		flipped=true;
-		imgBx=-5;
+		imgBx=x-5;
 	
 	}
 	
 	//imgBubble.y=-5;
-	imgBy=-5;
+	imgBy=y-5;
 	//imgArrow.x=imgBubble.x+1;
 	imgAx=imgBx+1
 	//imgArrow.y=imgBubble.y+1;
 	imgAy=imgBy+1
-	self.render();
+	if(oB!=noone and glitch=false){
+		oB.x=imgBx
+		oB.y=imgBy
+		oA.x=imgAx
+		oA.y=imgAy
+	
+	}
+	
+	render();
 
 
 }	

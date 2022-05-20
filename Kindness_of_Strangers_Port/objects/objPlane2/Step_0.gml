@@ -18,19 +18,19 @@ global.airplane2.y-=0.7
 //show_message("coming:   "  + string(x) + "  " +  string(y))
 //sound
 scale1 = room_width - -1000
-scale2 = x/scale1;
-scale3=0   + scale2
-scale4=-1 - (1* scale2)
+scale2 = (x- -1000)/scale1;
+scale3=(0   + scale2)/4
+scale4=-1 - scale2
+			
 				
-				
-if(x<=0 && stopsound){
+if(x<=-1000 && stopsound){
 	stopsound=false
-	audio_stop_sound(soundPlane)
+	audio_stop_sound(global.soundPlane)
 }				
 //audio_falloff_set_model(audio_falloff_linear_distance);
 if(stopsound){
-audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 1, 300, 0, true, 4);
-audio_sound_gain(soundPlane,scale3, 0);
+audio_play_sound_at(global.soundPlane, -median(-1, scale4, 1), 0, 0, 1, 300, 0, true, 4);
+audio_sound_gain(global.soundPlane,scale3, 0);
 }
 
 

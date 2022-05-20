@@ -51,6 +51,7 @@
     {"id":{"name":"Sprite20","path":"sprites/Sprite20/Sprite20.yy",},"order":19,},
     {"id":{"name":"_3_transcript_part02_breakdown_wav","path":"sounds/_3_transcript_part02_breakdown_wav/_3_transcript_part02_breakdown_wav.yy",},"order":6,},
     {"id":{"name":"objTrigger","path":"objects/objTrigger/objTrigger.yy",},"order":19,},
+    {"id":{"name":"objSndTrigger","path":"objects/objSndTrigger/objSndTrigger.yy",},"order":32,},
     {"id":{"name":"spr_photos","path":"sprites/spr_photos/spr_photos.yy",},"order":9,},
     {"id":{"name":"jumpRight","path":"sprites/jumpRight/jumpRight.yy",},"order":3,},
     {"id":{"name":"obj_maze_top","path":"objects/obj_maze_top/obj_maze_top.yy",},"order":13,},

@@ -34,14 +34,17 @@ function showHelp(){
 	}
 	//with(objStranger){
 		//	showTalkBubble=false}
-	
+	/*
 	with(objStranger){
 		ignore=true;
 		destruct=false;
 		self.render();
 		
 		}
-
+*/
+	with(objStranger){
+		event_user(0)
+	}
 
 
 }
@@ -53,7 +56,7 @@ function hideHelp(){
 	}
 	//	with(objStranger){
 		//	showTalkBubble=true}
-	
+	/*
 	
 with(objStranger){
 
@@ -62,6 +65,11 @@ with(objStranger){
 //	showTalkBubble=false
 	self.render()
 }
+*/
+
+with(objStranger){
+		event_user(1)
+	}
 
 }
 
@@ -74,13 +82,15 @@ with(obj_PhotoBackdrop){
 		//with(objStranger){
 		//	showTalkBubble=true}
 	
-	
+	/*
 	with(objStranger){
 		ignore=true;
 		destruct=false;
 		self.render();}
-
-
+*/
+with(objStranger){
+		event_user(0)
+	}
 	alarm[7]=spazTime;
 
 }
@@ -93,7 +103,7 @@ spazTime = SPAZ_TIME /2   + random(1)* (SPAZ_TIME/2)
 	}
 	//	with(objStranger){
 	//		showTalkBubble=true}
-	
+/*
 with(objStranger){
 
 	destruct=true;
@@ -101,7 +111,11 @@ with(objStranger){
 //	showTalkBubble=false
 	self.render()
 }
+*/
 
+with(objStranger){
+		event_user(1)
+	}
 	alarm[6]=spazTime;
 
 }

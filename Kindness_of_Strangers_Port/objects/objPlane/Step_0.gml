@@ -1,11 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(x>2000 and !playerDropped){
+if(x<=3000 and !playerDropped){
+	if(!audio_is_playing(soundPlane1)){
+		audio_play_sound_at(soundPlane1, -median(-1, 0, 1), 0, 0, 0,7500, 0, true, 5);
+		audio_sound_gain(soundPlane1,1,0)
+	}
 
-if(global.kindness){global.SC=instance_create_depth(0,0,0,objSoundController)
 
-	
-global.SC.construct();}
+
+}
+
+if(x>3000 and !playerDropped){
+
+		global.SC=instance_create_depth(0,0,0,objSoundController)
+global.SC.construct();
 	global.PC=instance_create_depth(0,0,0,obj_PhotoController);
 	playerDropped=true
 	global.player.x=x
@@ -24,9 +32,10 @@ global.SC.construct();}
 	//camera_set_view_target(view_camera[0], global.player);
 }
 
-if(x >= room_width * 1.5 -3000  && stopsound  ){
+if(x >=7500 /*room_width * 1.5 -3000*/  && stopsound && playerDropped  ){
 	//audio_stop_sound(soundPlane)
-	audio_stop_sound(soundPlane)
+	//show_message("stop")
+	//audio_stop_sound(soundPlane)
 	stopsound=false
 }
 if(x > room_width * 1.5){
@@ -39,19 +48,24 @@ if(playerDropped){
 y-=1
 //soundPlane.pan = FP.scale(x, 3000, FP.width * 1.5, 0, 1);
 //soundPlane.volume = FP.scale(x, 3000, FP.width * 1.5, 0.5, 0);	
-scale1 = room_width*1.5-3000;
-scale2 = x/scale1;
-scale3=0.5 - (0.5*scale2)
+scale1 = room_width*1.5-3000; //4500
+scale2 = (x-3000)/scale1
+scale3=(0.5 - (0.5*scale2))/2
 scale4=0+ scale2
 //show_message(string(scale3))
 //show_message()
 //show_message()
 //audio_falloff_set_model(audio_falloff_linear_distance);
 if(stopsound){
-audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 1, 300, 0, true, 5);
-audio_sound_gain(soundPlane,scale3, 0);
+	if(stopsound2){
+		audio_stop_sound(soundPlane1)
+		stopsound2=false}
+//audio_falloff_set_model(audio_falloff_linear_distance);	
+//audio_play_sound_at(soundPlane, -median(-1, scale4, 1), 0, 0, 0,3000, 0, true, 5);
+audio_play_sound_at(soundPlane1, scale4, 0, 0, 0,7500,0, true, 5);
+//show_message(string(scale3))
+audio_sound_gain(soundPlane1,scale3, 0);
 }
-
 
 
 

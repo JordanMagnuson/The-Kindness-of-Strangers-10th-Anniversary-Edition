@@ -11,7 +11,8 @@ randomize();
 //alarm[1]=2
 
 function loadlevel(){
-	
+	global.c01=false
+	global.c02=false
 	//ds=ds_map_create();
 	var level_data=json_decode(global.json_level_data)
 		
