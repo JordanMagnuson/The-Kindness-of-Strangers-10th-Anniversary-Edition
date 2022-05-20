@@ -10,6 +10,8 @@
 //room_goto(rmGame);
 
 THING_NAME = "Notgame/Game Poem";
+global.kindness=true
+global.intro=true;
 
 // Is this a touch device?
 switch (os_type) {
