@@ -28,8 +28,8 @@
   "creationCodeFile": "",
   "inheritCode": false,
   "instanceCreationOrder": [
-    {"name":"inst_193DCB35","path":"rooms/Room0/Room0.yy",},
-    {"name":"inst_456C96CA","path":"rooms/Room0/Room0.yy",},
+    {"name":"inst_193DCB35","path":"rooms/rmTitleScreenLegacy/rmTitleScreenLegacy.yy",},
+    {"name":"inst_456C96CA","path":"rooms/rmTitleScreenLegacy/rmTitleScreenLegacy.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
@@ -57,7 +57,7 @@
     "path": "folders/Rooms.yy",
   },
   "resourceVersion": "1.0",
-  "name": "Room0",
+  "name": "rmTitleScreenLegacy",
   "tags": [],
   "resourceType": "GMRoom",
 }
