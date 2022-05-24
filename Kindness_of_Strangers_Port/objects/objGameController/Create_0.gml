@@ -122,8 +122,13 @@ instance_create_depth(0,0,0,objCamera);
 //camera_destroy(view_camera[0]);
 //view_camera[0] = camera_create_view(0, 0, 640, 480, 0, global.airplane, -1, -1, room_width, -1);
 
-
-
+audio_sound_gain(_1_transcript_part04_wav    ,1,0)
+audio_sound_gain( _2_transcript_part03_wav   ,1,0)
+audio_sound_gain( _3_transcript_part02_breakdown_wav   ,1,0)
+audio_sound_gain( _4_transcript_part02_wav   ,1,0)
+audio_sound_gain( _5_transcript_part01_wav   ,1,0)
+audio_sound_gain( _8_powerup03_wav   ,1,0)
+audio_sound_gain(_11_plane_sound    ,1,0)
 
 
 

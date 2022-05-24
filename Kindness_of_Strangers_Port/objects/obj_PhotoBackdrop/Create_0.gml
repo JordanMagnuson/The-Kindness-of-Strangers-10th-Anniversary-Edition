@@ -18,8 +18,8 @@ function construct(source,source_index){
 	image_speed=0;
 	image_alpha=0;
 	image_prealpha=image_alpha
-	image_xscale=640/sprite_width 
-	image_yscale=480/sprite_height 
+//	image_xscale=640/sprite_width 
+	//image_yscale=480/sprite_height 
 }
 
 

@@ -14,4 +14,7 @@ function construct(_x,_y,_num){
 	s.num=num
 	x=_x;
 	y=_y;
+	if(num==3){
+		x+=12
+	}
 }

@@ -58,6 +58,8 @@ if (global.coll01)
 			
 			else if (global.coll02 && currentSound != sndTranscript03 /*&&  !audio_is_playing(sndTranscript02)*/)
 			{
+				if(audio_is_playing(sndTranscript02)){
+						fadeOut(sndTranscript02,FADE_DURATION)}
 			//	trace('collide trigger 2');
 				if (global.kindness)
 				{

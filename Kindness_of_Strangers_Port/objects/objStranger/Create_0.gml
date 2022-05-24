@@ -56,8 +56,8 @@ function construct(_x,_y){
 
 function checkHelp(){
 	if(instance_exists(objPlayer)){
-		if(keyboard_check_pressed(vk_control) or(((y-global.player.y)<=Y_DISTANCE_TO_HELP and (y-global.player.y)>=0) or ((global.player.y-y)<=Y_DISTANCE_TO_HELP and (global.player.y-y) >=0))){
-			if(keyboard_check_pressed(vk_control) or (((x-global.player.x ) <= X_DISTANCE_TO_HELP and (x-global.player.x)>=0) or ((global.player.x-x)<=X_DISTANCE_TO_HELP and (global.player.x-x) >=0)) ){
+if(keyboard_check_pressed(vk_control) or((((y+8)-global.player.y)<=Y_DISTANCE_TO_HELP and ((y+8)-global.player.y)>=0) or ((global.player.y-(y+8))<=Y_DISTANCE_TO_HELP and (global.player.y-(y+8)) >=0))){
+			if(keyboard_check_pressed(vk_control) or ((((x+10)-global.player.x ) <= X_DISTANCE_TO_HELP and ((x+10)-global.player.x)>=0) or ((global.player.x-(x+10))<=X_DISTANCE_TO_HELP and (global.player.x-(x+10)) >=0)) ){
 				showTalkBubble=true;
 				if(x>global.player.x){
 					direction = 180}
@@ -87,7 +87,10 @@ if((showTalkBubble and helped==false) or ignore=true){
 	oB.sprite_index=spr_talk_bubble
 	oA.sprite_index=imgArrow
 	//oB.sprite_index=imgBubble.sprite_index
-
+	oB.x=imgBx
+	oB.y=imgBy
+	oA.x=imgAx
+	oA.y=imgAy
 	//oB.x=imgBx
 	//oB.y=imgBy
 	//oA.sprite_index=imgArrow.sprite_index
@@ -119,7 +122,7 @@ else if(!showTalkBubble  and destruct=true){
 function updateTalkBubble(){
 
 	
-	if(direction==0){
+	if(global.player.x>=x){
 	//	imgBubble.flipped=false;
 		//imgBubble.x=sprite_width+imgBubble.sprite_width;
 		imgBx=x+24

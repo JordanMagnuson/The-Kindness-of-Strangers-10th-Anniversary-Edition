@@ -26,6 +26,15 @@ if(x<0 || x>room_width){
 		global.died=true;
 		var Fo=instance_create_depth(0,0,-100,objFadeOut)
 		Fo.construct(5,6,0);
+		if(instance_exists(objSoundController)){
+			with(objSoundController){
+				if(audio_is_playing(currentSound)){
+					fadeOut(currentSound,6*room_speed);
+				
+				}
+			
+			}
+		}
 	
 	}
 }

@@ -13,6 +13,7 @@ photoArray02=[5,6,7,8,9,10,11,12,13,14,15,16,17]
 photoArray03=[18,19,20,21,22,23,24,25,26]
 photoIndex=0;
  currentPhotoArray=photoArray01
+ curr=1;
 //alarm[0]=DISPLAY_TIME;
 alarm[1]=START_TIME;
 
@@ -26,7 +27,7 @@ function start(){
 	currentIndex++;
 	instance_destroy(ph);
 	alarm[0]=DISPLAY_TIME;
-	photoIndex++;
+	//photoIndex++;
 }
 
 function nextPhoto(){
@@ -38,14 +39,14 @@ function nextPhoto(){
 	currentPhoto=instance_create_depth(0,0,0,obj_PhotoBackdrop);
 	ph=instance_create_depth(0,0,0,obj_photoHelper)
 	ph.sprite_index=spr_photos
-	ph.image_index=currentPhotoArray[photoIndex]
+	ph.image_index=currentPhotoArray[currentIndex];
 	currentPhoto.construct(ph.sprite_index,ph.image_index);
 	currentPhoto.fadeIn()
 	ph.image_alpha=0;
 //	ph.depth=200;
 
-		if(currentIndex <array_length(currentPhotoArray)){
-		photoIndex=currentPhotoArray[currentIndex];	
+		if(currentIndex <array_length(currentPhotoArray)-1){
+		//photoIndex=currentPhotoArray[currentIndex];	
 		currentIndex++;
 	
 		
