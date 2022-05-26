@@ -4,6 +4,7 @@
 #macro FADE_OUT_DURATION 3 * room_speed
 #macro MAX_ALPHA  0.5
 #macro DISPLAY_DURATION room_speed*10
+
 fin=false;
 fout=false;
 alarm[0] = DISPLAY_DURATION
@@ -18,6 +19,16 @@ function construct(source,source_index){
 	image_speed=0;
 	image_alpha=0;
 	image_prealpha=image_alpha
+	
+	if (objCamera.view_width > objCamera.view_height) {
+		SPRITE_SCALE = objCamera.view_width / sprite_width;
+	}
+	else {
+		SPRITE_SCALE = objCamera.view_height / sprite_height;
+	}
+	SCALED_WIDTH = SPRITE_SCALE * sprite_width;
+	SCALED_HEIGHT = SPRITE_SCALE * sprite_height;	
+	
 //	image_xscale=640/sprite_width 
 	//image_yscale=480/sprite_height 
 }
