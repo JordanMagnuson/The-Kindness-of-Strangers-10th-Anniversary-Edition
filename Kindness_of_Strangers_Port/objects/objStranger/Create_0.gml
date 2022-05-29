@@ -56,8 +56,8 @@ function construct(_x,_y){
 
 function checkHelp(){
 	if(instance_exists(objPlayer)){
-if(keyboard_check_pressed(vk_control) or((((y+8)-global.player.y)<=Y_DISTANCE_TO_HELP and ((y+8)-global.player.y)>=0) or ((global.player.y-(y+8))<=Y_DISTANCE_TO_HELP and (global.player.y-(y+8)) >=0))){
-			if(keyboard_check_pressed(vk_control) or ((((x+10)-global.player.x ) <= X_DISTANCE_TO_HELP and ((x+10)-global.player.x)>=0) or ((global.player.x-(x+10))<=X_DISTANCE_TO_HELP and (global.player.x-(x+10)) >=0)) ){
+if(/*keyboard_check_pressed(vk_control) or*/((((y+8)-global.player.y)<=Y_DISTANCE_TO_HELP and ((y+8)-global.player.y)>=0) or ((global.player.y-(y+8))<=Y_DISTANCE_TO_HELP and (global.player.y-(y+8)) >=0))){
+			if(/*keyboard_check_pressed(vk_control) or*/ ((((x+10)-global.player.x ) <= X_DISTANCE_TO_HELP and ((x+10)-global.player.x)>=0) or ((global.player.x-(x+10))<=X_DISTANCE_TO_HELP and (global.player.x-(x+10)) >=0)) ){
 				showTalkBubble=true;
 				if(x>global.player.x){
 					direction = 180}

@@ -53,9 +53,7 @@ if (global.coll01)
 					
 				}
 			}
-   
-			
-			
+
 			else if (global.coll02 && currentSound != sndTranscript03 /*&&  !audio_is_playing(sndTranscript02)*/)
 			{
 				if(audio_is_playing(sndTranscript02)){
@@ -99,16 +97,12 @@ if (global.coll01)
 					//audio_play_sound_at(soundPlane, scale4, 0, 0, 0,7500,0, true, 5);
 					//audio_sound_gain(soundPlane,scale3, 0);
 					
-					audio_play_sound_at(global.soundPlane, scale4, 0, 0, 0,7500,0, true, 5);
+				//	audio_play_sound_at(global.soundPlane, scale4, 0, 0, 0,7500,0, true, 5);
 					audio_sound_gain(global.soundPlane,scale3, 0);
 					
 					
 					}
 
-			
-				
-				
-				
 			}
 			
 			//if (currentSound == sndTranscript04 && !fadeOutStarted)

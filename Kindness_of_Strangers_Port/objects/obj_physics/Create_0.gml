@@ -239,8 +239,8 @@ function motxx(e, _spdx){
 
 	i=0;
 	while(i < spdx){
+
 	
-		
 		if(!place_meeting(rightx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
 			//if(objMaze.coll()){}
 			rightx+=f//*f
@@ -256,23 +256,19 @@ function motxx(e, _spdx){
 	wj=savedwj;
 	i=0;
 	while(i < spdx){
-	
-	
+
 		if(!place_meeting(leftx+f,e.y/**f*/,objMaze)      /*objMaze.coll(e.x,e.y + spdy*f,1)*/){
-			//if(objMaze.coll()){}
+
 			leftx+=f//*f
 			}		
 		else{
 			if(keyboard_check(global.keyLeft)){
-//show_message("Presto")
+
 				;}
 			boollx = false;}
 		wj++;
 		i++;
 	}
-
-
-
 	wj=savedwj;
 	var copyleft =leftx;
 	var copyright= rightx;
@@ -307,10 +303,7 @@ function motxx(e, _spdx){
 	
 	if(f==1){
 		if(boolrx==true){
-			e.x=rightx;
-	
-			
-			}
+			e.x=rightx;	}
 		return boolrx;	
 		
 	}

@@ -3,7 +3,6 @@
 #macro START_TIME  room_speed * 5
 #macro DISPLAY_TIME room_speed*10
  show= true;
-
 currentIndex=0;
 init=true;
  currentPhoto=noone;
@@ -14,7 +13,6 @@ photoArray03=[18,19,20,21,22,23,24,25,26]
 photoIndex=0;
  currentPhotoArray=photoArray01
  curr=1;
-//alarm[0]=DISPLAY_TIME;
 alarm[1]=START_TIME;
 
 function start(){
@@ -31,7 +29,7 @@ function start(){
 }
 
 function nextPhoto(){
-	//show_message("next");
+
 	//lastPhoto=currentPhoto;
 	//currentPhoto.depth=200;
 	//currentPhoto.instance_destroy();
@@ -47,11 +45,7 @@ function nextPhoto(){
 
 		if(currentIndex <array_length(currentPhotoArray)-1){
 		//photoIndex=currentPhotoArray[currentIndex];	
-		currentIndex++;
-	
-		
-		
-		}
+		currentIndex++;}
 	else{
 		currentIndex=0;}
 	alarm[0]=DISPLAY_TIME;

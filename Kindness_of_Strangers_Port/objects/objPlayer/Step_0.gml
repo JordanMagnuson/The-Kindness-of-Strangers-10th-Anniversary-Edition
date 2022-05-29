@@ -116,32 +116,17 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 	}
 		
 }
-//	grav();
-//	maxspeed(false,true);
-//	if(_speed[1]<0 and !(keyboard_check_pressed(global.keyA))){
-//		grav();
-//		grav();
-	
-//	}
-	if(!keyboard_check(global.keyA)  &&  _speed[1]<0  ){
-	//	_speed[1]=0;
-		}
-	
 	grav();
+
 
 	maxspeed(false,true);
 	if(_speed[1]<0 and !(keyboard_check(global.keyA))){
 		grav();
 		grav();}
 		//direction=270
-
-
-	if(keyboard_check_pressed(global.keyA)){
-		
-		//show_message("goo" + string(_speed[1]))
-		
-		}
-
+	if(c3=true){
+	_speed[0]=0}
+		motion(true,true,_speed[0],_speed[1]);
 	if	(onground){
 		if(_speed[0]<0){
 			sprite_index=walkLeft
@@ -169,10 +154,8 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 
 
 	//_speed[0]+=acceleration[0];
-	goo();	
+	//goo();	
 
-
-		motion(true,true,_speed[0],_speed[1]);
 
 	//go();
 //	grav();

@@ -29,7 +29,7 @@ if(x<=-1000 && stopsound){
 }				
 //audio_falloff_set_model(audio_falloff_linear_distance);
 if(stopsound){
-audio_play_sound_at(global.soundPlane, -median(-1, scale4, 1), 0, 0, 1, 300, 0, true, 4);
+//audio_play_sound_at(global.soundPlane, -median(-1, scale4, 1), 0, 0, 1, 300, 0, true, 4);
 audio_sound_gain(global.soundPlane,scale3, 0);
 }
 
