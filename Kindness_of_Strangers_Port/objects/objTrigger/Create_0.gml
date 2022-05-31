@@ -7,7 +7,7 @@ function construct(_x,_y,_num){
 	image_xscale= 50/sprite_width;
 	image_yscale= 50/sprite_height;
 	image_alpha=0
-//	s=instance_create_depth(x,y+1,-1,objSndTrigger)
+	//s=instance_create_depth(x,y+1,-1,objSndTrigger)
 
 	_type= "Trigger";
 	num=_num
