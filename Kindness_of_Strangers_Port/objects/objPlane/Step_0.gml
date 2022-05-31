@@ -59,7 +59,7 @@ y-=1
 //soundPlane.volume = FP.scale(x, 3000, FP.width * 1.5, 0.5, 0);	
 scale1 = room_width*1.5-3000; //4500
 scale2 = (x-3000)/scale1
-scale3=(0.5 - (0.5*scale2))/2
+scale3=(0.5 - (0.5*scale2))
 scale4=0+ scale2
 //show_message(string(scale3))
 //show_message()
