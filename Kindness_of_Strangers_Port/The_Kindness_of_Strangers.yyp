@@ -7,6 +7,7 @@
     {"id":{"name":"spr_fade","path":"sprites/spr_fade/spr_fade.yy",},"order":20,},
     {"id":{"name":"objStrangerDown","path":"objects/objStrangerDown/objStrangerDown.yy",},"order":12,},
     {"id":{"name":"_1_transcript_part04_wav","path":"sounds/_1_transcript_part04_wav/_1_transcript_part04_wav.yy",},"order":4,},
+    {"id":{"name":"ImageLoadBar","path":"extensions/ImageLoadBar/ImageLoadBar.yy",},"order":1,},
     {"id":{"name":"spr_pixel_heart","path":"sprites/spr_pixel_heart/spr_pixel_heart.yy",},"order":8,},
     {"id":{"name":"scr_LevelData","path":"scripts/scr_LevelData/scr_LevelData.yy",},"order":1,},
     {"id":{"name":"ToggleFullscreen","path":"extensions/ToggleFullscreen/ToggleFullscreen.yy",},"order":0,},
