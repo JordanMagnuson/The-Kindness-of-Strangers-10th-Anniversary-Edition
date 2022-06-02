@@ -28,10 +28,8 @@ function construct(){
 
  function hitPlane2()
 {
-	/*audio_stop_sound(soundPlane)
-	if(audio_is_playing(currentSound)){
-		audio_stop_sound(currentSound)}
-		*/
+	audio_stop_sound(soundPlane)
+	
 	//audio_stop_sound(global.soundPlane)
 	stopsound=false
 	flip=3

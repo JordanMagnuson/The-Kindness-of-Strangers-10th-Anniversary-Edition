@@ -13,6 +13,9 @@ photoArray03=[18,19,20,21,22,23,24,25,26]
 photoIndex=0;
  currentPhotoArray=photoArray01
  curr=1;
+ fadepause=false;
+a0=false
+ a1=true;
 alarm[1]=START_TIME;
 
 function start(){
@@ -24,6 +27,7 @@ function start(){
 	currentPhoto.fadeIn()
 	currentIndex++;
 	instance_destroy(ph);
+	a0=true;
 	alarm[0]=DISPLAY_TIME;
 	//photoIndex++;
 }
@@ -48,6 +52,7 @@ function nextPhoto(){
 		currentIndex++;}
 	else{
 		currentIndex=0;}
+	a0=true;
 	alarm[0]=DISPLAY_TIME;
 	instance_destroy(ph);
 

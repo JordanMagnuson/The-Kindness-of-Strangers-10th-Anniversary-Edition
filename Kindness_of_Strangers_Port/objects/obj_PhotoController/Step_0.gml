@@ -1,5 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
+/*
+if(fadepause){
+	if(a1){
+		alarm[1]=alarm[1]+1;}
+
+	if(a0){
+		alarm[0]=alarm[0]+1;}
+}
+
 if (global.c01 && currentPhotoArray != photoArray02){
 	
 				currentPhotoArray = photoArray02;

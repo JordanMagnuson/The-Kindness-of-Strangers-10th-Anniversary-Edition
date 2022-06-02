@@ -49,6 +49,7 @@ if(x >=7500 /*room_width * 1.5 -3000*/  && stopsound && playerDropped  ){
 }
 if(x > room_width * 1.5){
 	//audio_stop_sound(soundPlane)
+	audio_sound_gain(_11_plane_sound,1,0)
 	instance_destroy();	
 }
 

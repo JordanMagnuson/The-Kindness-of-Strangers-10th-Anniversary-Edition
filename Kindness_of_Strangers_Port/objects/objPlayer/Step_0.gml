@@ -72,13 +72,17 @@ accelx=0;
 accely=false;
 movex=true;
 if(!stunned){
-	if (keyboard_check(global.keyLeft) and _speed[0] > -mMaxSpeed[0]) { 
-		if(_speed[0]>0){_speed[0]=0;}
-		acceleration[0] = -movement; accelx=-1; direction = 180; }
-	else if (keyboard_check(global.keyRight) and _speed[0] < mMaxSpeed[0]) { 
+	
+	if (keyboard_check(global.keyRight) and _speed[0] < mMaxSpeed[0]) { 
 		if(_speed[0]<0){_speed[0]=0;}
 		acceleration[0] = movement; accelx=1; direction = 0; }
-	else if(  !(keyboard_check(global.keyRight)) && !(keyboard_check(global.keyLeft))    )      {
+	
+	if(!keyboard_check(global.keyRight)){
+		if (keyboard_check(global.keyLeft) and _speed[0] > -mMaxSpeed[0]) { 
+			if(_speed[0]>0){_speed[0]=0;}
+			acceleration[0] = -movement; accelx=-1; direction = 180; }
+	}
+	if(  !(keyboard_check(global.keyRight)) && !(keyboard_check(global.keyLeft))    )      {
 		//speed[0]=0;
 		movex=false
 		}
@@ -154,7 +158,7 @@ if(!stunned && keyboard_check_pressed(global.keyA)){
 
 
 	//_speed[0]+=acceleration[0];
-	//goo();	
+	goo();	
 
 
 	//go();

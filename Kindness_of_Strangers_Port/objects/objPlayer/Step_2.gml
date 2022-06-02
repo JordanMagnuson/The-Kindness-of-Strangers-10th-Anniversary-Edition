@@ -22,8 +22,3 @@ if(colll=false){
 	l=0;
 	
 
-if(keyboard_check_pressed(ord("G"))){
-	sprite_index=standRight
-//	instance_create_depth(x+sprite_width,y,-1,Object22);
-}
-	

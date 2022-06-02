@@ -5,6 +5,11 @@ if(global.coll03   and !playerTrigger03){
 playerTrigger03=true
 global.player.stunned=true
 global.player.hspeed=0;
+audio_sound_gain(_11_plane_sound,1,0)
+audio_falloff_set_model(audio_falloff_linear_distance);	
+audio_play_sound_at(soundPlane, -median(-1, 0, 1), 0, 0, 0,7500, 0, true, 5);
+audio_sound_gain(soundPlane,0.5,0)
+
 //global.player.vspeed=2;
 //audio_play_sound(soundPlane,5,true)
 //sound plane.loop
@@ -19,18 +24,18 @@ global.airplane2.y-=0.7
 //sound
 scale1 = room_width - -1000
 scale2 = (x- -1000)/scale1;
-scale3=(0   + scale2)/4
+scale3=(0   + scale2)
 scale4=-1 - scale2
 			
 				
 if(x<=-1000 && stopsound){
 	stopsound=false
-	audio_stop_sound(global.soundPlane)
+	audio_stop_sound(soundPlane)
 }				
 //audio_falloff_set_model(audio_falloff_linear_distance);
 if(stopsound){
 //audio_play_sound_at(global.soundPlane, -median(-1, scale4, 1), 0, 0, 1, 300, 0, true, 4);
-audio_sound_gain(global.soundPlane,scale3, 0);
+audio_sound_gain(soundPlane,scale3, 0);
 }
 
 

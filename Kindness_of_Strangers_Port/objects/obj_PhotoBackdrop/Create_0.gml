@@ -4,7 +4,7 @@
 #macro FADE_OUT_DURATION 3 * room_speed
 #macro MAX_ALPHA  0.5
 #macro DISPLAY_DURATION room_speed*10
-
+fadepause=false;
 fin=false;
 fout=false;
 alarm[0] = DISPLAY_DURATION

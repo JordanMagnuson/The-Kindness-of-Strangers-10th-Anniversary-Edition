@@ -24,12 +24,19 @@ function showHelp(){
 	with(obj_PhotoBackdrop){
 		event_user(0)}
 	with(objStranger){
-		event_user(0)}}
+		event_user(0)}
+	with(obj_PhotoController){
+		fadepause=true;}
+		
+		}
 function hideHelp(){
 		with(obj_PhotoBackdrop){
 			event_user(1)}
 		with(objStranger){
-			event_user(1)}}
+			event_user(1)}
+		with(obj_PhotoController){
+			fadepause=false;}	
+			}
 
 function spazShow(){
 	spazTime = SPAZ_TIME /2   + random(1)* (SPAZ_TIME/2)
@@ -37,6 +44,8 @@ function spazShow(){
 		event_user(0)}
 	with(objStranger){
 		event_user(0)}
+	with(obj_PhotoController){
+		fadepause=true;}
 	alarm[7]=spazTime;}
 
 function spazHide(){
@@ -45,11 +54,17 @@ spazTime = SPAZ_TIME /2   + random(1)* (SPAZ_TIME/2)
 		event_user(1)}
 	with(objStranger){
 		event_user(1)}
+	with(obj_PhotoController){
+		fadepause=false;}
 	alarm[6]=spazTime;}
 
 function destroy(){
-	
+	global.help=false;
+	with(objStranger){
+		showTalkBubble=false;
+		ignore=false;}
 	with(obj_photoHelper){
 		instance_destroy();}
+	
 	instance_destroy()
 }

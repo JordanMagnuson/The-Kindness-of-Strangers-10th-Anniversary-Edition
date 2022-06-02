@@ -33,6 +33,7 @@ if (global.coll01)
 					//fout=true
 				//	show_message("AAAA")
 			//		audio_stop_sound(currentSound)
+					
 					if (global.kindness){
 						currentSound = sndTranscript02
 						}
@@ -76,9 +77,9 @@ if (global.coll01)
 			//	trace('trigger04');
 				trigger04 = true;
 
-
-				//audio_play_sound(soundPlane,5,true); 
-				audio_play_sound(global.soundPlane,5,true); 
+			
+				audio_play_sound(soundPlane,5,true); 
+				//audio_play_sound(global.soundPlane,5,true); 
 				global.coll04=false
 	
 			}	
@@ -88,7 +89,7 @@ if (global.coll01)
 				//soundPlane.volume = FP.scale(Global.player.x, Global.trigger04.x, FP.width, 0, 0.5);
 				scale1 = room_width - global.trigger04.x
 				scale2 = (global.player.x - global.trigger04.x)/scale1;
-				scale3=(0+ scale2)/4
+				scale3=(0+ scale2)/2
 				scale4=1 - scale2
 			
 				
@@ -98,7 +99,7 @@ if (global.coll01)
 					//audio_sound_gain(soundPlane,scale3, 0);
 					
 				//	audio_play_sound_at(global.soundPlane, scale4, 0, 0, 0,7500,0, true, 5);
-					audio_sound_gain(global.soundPlane,scale3, 0);
+					audio_sound_gain(soundPlane,scale3, 0);
 					
 					
 					}
